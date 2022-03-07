@@ -6,6 +6,8 @@ import NavLink from "./NavLink";
 import logo from "../../images/logo.svg";
 import hamburger from "../../images/icon-hamburger.svg";
 import NavDrawer from "./NavDrawer";
+import breakpoints from "../../utils/breakpoints";
+import { respondTo } from "../../utils/Mixins";
 
 const NavbarNav = styled.nav`
   display: flex;
@@ -13,6 +15,14 @@ const NavbarNav = styled.nav`
   margin: 2.125em 3em 0 2.5em;
   color: #fff;
   justify-content: space-between;
+
+  ${respondTo(
+    breakpoints.device.xs,
+    `
+    margin-left:  1.4375em;
+    margin-right:  1.4375em;
+  `
+  )}
 `;
 
 const NavLinks = styled.div`
@@ -41,7 +51,9 @@ const Navbar = (props) => {
   const [navDrawerIsVisible, setNavDrawerIsVisible] = useState(false);
 
   const navDrawerTogglerHandler = () => {
-    setNavDrawerIsVisible(true);
+    navDrawerIsVisible
+      ? setNavDrawerIsVisible(false)
+      : setNavDrawerIsVisible(true);
   };
 
   return (

@@ -1,7 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import NavLink from "./NavLink";
 import Button from "../utils/Button";
+import breakpoints from "../../utils/breakpoints";
+import { respondTo } from "../../utils/Mixins";
+import { fadeInDown } from "react-animations";
+
+// simple animation
+const fadeInDownAnimation = keyframes`${fadeInDown}`;
 
 const NavDrawerDiv = styled.div`
   background-color: #fff;
@@ -12,6 +18,16 @@ const NavDrawerDiv = styled.div`
   right: 3em;
   padding: 2.45em;
   box-sizing: border-box;
+  animation: 1s ${fadeInDownAnimation};
+
+  ${respondTo(
+    breakpoints.device.xs,
+    `
+    margin: 0 1.4375em;
+    width: calc(100% - 2.875em);
+    right:0;
+  `
+  )}
 `;
 
 const Content = styled.div`
@@ -26,8 +42,8 @@ const Content = styled.div`
   &:after {
     content: " ";
     position: absolute;
-    top: -64px;
-    right: -39px;
+    top: -4em;
+    right: -2.4375em;
     width: 0;
     height: 0;
     border-style: solid;

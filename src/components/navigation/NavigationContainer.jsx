@@ -4,6 +4,7 @@ import backgroundImage from "../../images/desktop/image-header.jpg";
 import arrowDown from "../../images/icon-arrow-down.svg";
 import Navbar from "./Navbar";
 import CustomImage from "../utils/CustomImage";
+import propTypes from "prop-types";
 
 const NavigationContainerDiv = styled.div`
   max-height: 800px;
@@ -40,6 +41,10 @@ const NavigationContainer = (props) => {
       {props.children}
     </NavigationContainerDiv>
   );
+};
+
+NavigationContainer.propTypes = {
+  children: propTypes.node,
 };
 
 export default NavigationContainer;

@@ -19,3 +19,17 @@ export const breakpoints = (
   }, "");
   return css([breakpointProps]);
 };
+
+export const respondTo = (
+  breakpoint,
+  styles = "" // the CSS to apply to the breakpoints
+) => {
+  const breakpointProps = `
+    @media screen and ${breakpoint} {
+      ${styles}
+    }
+    `;
+  return css([breakpointProps]);
+};
+
+export default respondTo;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import propTypes from "prop-types";
 
 const CustomImageImg = styled.img`
   width: ${(props) => props.width};
@@ -16,6 +17,12 @@ const CustomImage = (props) => {
       margin={props.margin}
     />
   );
+};
+
+CustomImage.propTypes = {
+  src: propTypes.string.isRequired,
+  alt: propTypes.string.isRequired,
+  className: propTypes.string,
 };
 
 export default CustomImage;

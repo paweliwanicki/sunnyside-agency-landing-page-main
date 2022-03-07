@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import propTypes from 'prop-types';
 
 const ButtonBtn = styled.button`
   background-color: ${(props) => (props.bgColor ? props.bgColor : "#fff")};
@@ -31,6 +32,13 @@ const Button = (props) => {
       {props.text}
     </ButtonBtn>
   );
+};
+
+Button.propTypes = {
+  type: propTypes.string,
+  onClick: propTypes.func,
+  disabled: propTypes.bool,
+  bgColor: propTypes.string
 };
 
 export default Button;

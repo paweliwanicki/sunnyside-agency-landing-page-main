@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import propTypes from "prop-types";
 
 const NavLinkLink = styled.div`
   width: max-content;
@@ -21,6 +22,12 @@ const NavLink = (props) => {
       <Link to={`#${props.link}`}>{props.text}</Link>
     </NavLinkLink>
   );
+};
+
+NavLink.propTypes = {
+  text: propTypes.string.isRequired,
+  link: propTypes.string.isRequired,
+  navdrawer: propTypes.bool,
 };
 
 export default NavLink;
