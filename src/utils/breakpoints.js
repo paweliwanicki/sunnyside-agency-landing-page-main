@@ -8,4 +8,9 @@ const size = {
   sm: `(max-width: ${size.sm})`,
   lg: `(max-width: ${size.lg})`
  }
- export default {size, device}
+
+ const breakpoints = {
+   size: {...size},
+   device: {...device}
+ }
+ export default breakpoints;

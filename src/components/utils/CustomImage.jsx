@@ -6,6 +6,8 @@ const CustomImageImg = styled.img`
   width: ${(props) => props.width};
   display: ${(props) => props.display};
   margin: ${(props) => props.margin};
+  grid-column: ${(props) => props.gridColumn ? props.gridColumn : ''};
+  grid-row: ${(props) => props.gridRow ? props.gridRow : '' };
 `;
 
 const CustomImage = (props) => {
@@ -15,6 +17,8 @@ const CustomImage = (props) => {
       alt={props.alt}
       display={props.display}
       margin={props.margin}
+      gridColumn={props.gridColumn}
+      gridRow={props.gridRow}
     />
   );
 };
