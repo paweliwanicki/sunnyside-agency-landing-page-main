@@ -1,3 +1,4 @@
+// inspiration -> https://dev.to/cagatayunal/how-to-use-css-media-query-breakpoint-in-styled-components-9of
 const size = {
   xs: '28.125em',
   sm: '48em',

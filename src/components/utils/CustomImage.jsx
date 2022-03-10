@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import propTypes from "prop-types";
 
-const CustomImageImg = styled.img`
-  width: ${(props) => props.width};
+const StyledImg = styled.img`
+  width: ${(props) => props.width ? props.width : 'initial' };
+  height: ${(props) => props.height ? props.height : 'auto' };
   display: ${(props) => props.display};
   margin: ${(props) => props.margin};
   grid-column: ${(props) => props.gridColumn ? props.gridColumn : ''};
@@ -12,9 +13,11 @@ const CustomImageImg = styled.img`
 
 const CustomImage = (props) => {
   return (
-    <CustomImageImg
+    <StyledImg
       src={props.src}
       alt={props.alt}
+      height={props.height}
+      width={props.width}
       display={props.display}
       margin={props.margin}
       gridColumn={props.gridColumn}

@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import propTypes from "prop-types";
+import cssVariables from "../../utils/cssVariables";
 
-const NavLinkLink = styled.div`
+const StyledNavLink = styled.div`
   width: max-content;
   font-size: 1.125em;
-  font-weight: 600;
-  color: ${(props) => (props.navdrawer ? "#808397" : "#fff")};
+  font-weight: ${cssVariables.FONT_WEIGHT_600};
+  color: ${(props) =>
+    props.navdrawer ? cssVariables.COLOR_GRAY : cssVariables.COLOR_WHITE};
   margin-right: ${(props) => (props.navdrawer ? "" : "2.95em")};
 
   a {
@@ -18,9 +20,9 @@ const NavLinkLink = styled.div`
 
 const NavLink = (props) => {
   return (
-    <NavLinkLink navdrawer={props.navdrawer}>
+    <StyledNavLink navdrawer={props.navdrawer}>
       <Link to={`#${props.link}`}>{props.text}</Link>
-    </NavLinkLink>
+    </StyledNavLink>
   );
 };
 

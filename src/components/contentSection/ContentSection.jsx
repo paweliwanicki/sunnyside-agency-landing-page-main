@@ -6,6 +6,7 @@ import cherryImg from "../../images/desktop/image-graphic-design.jpg";
 import glassImg from "../../images/desktop/image-stand-out.jpg";
 import TextBox from "./TextBox";
 import TextBoxBgImage from "./TextBoxBgImage";
+import cssVariables from "../../utils/cssVariables";
 
 const ContentSection = (props) => {
   return (
@@ -23,12 +24,14 @@ const ContentSection = (props) => {
         alt={`egg`}
         gridColumn={`3/5`}
         gridRow={`2/3`}
+        width={`100%`}
       />
       <CustomImage
         src={glassImg}
         alt={`glass`}
         gridColumn={`1/3`}
         gridRow={`3/4`}
+        width={`100%`}
       />
       <TextBox
         gridColumn={`3/5`}
@@ -42,16 +45,16 @@ const ContentSection = (props) => {
         backgroundImg={cherryImg}
         gridColumn={`1/3`}
         gridRow={`4/5`}
-        color={`#24554A`}
+        color={cssVariables.COLOR_DARK_GREEN}
         headerText={`Graphic Design`}
-        text={`  Great design makes you memorable. We deliver artwork that underscores
+        text={`Great design makes you memorable. We deliver artwork that underscores
           your brand message and captures potential clients’ attention.`}
       ></TextBoxBgImage>
       <TextBoxBgImage
         backgroundImg={orangeImg}
         gridColumn={`3/5`}
         gridRow={`4/5`}
-        color={`#24303e`}
+        color={cssVariables.COLOR_DARK_BLUE}
         headerText={`Photography`}
         text={`Increase your credibility by getting the most stunning, high-quality
           photos that improve your business image.`}

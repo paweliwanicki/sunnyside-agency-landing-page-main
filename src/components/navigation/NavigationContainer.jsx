@@ -5,6 +5,7 @@ import arrowDown from "../../images/icon-arrow-down.svg";
 import Navbar from "./Navbar";
 import CustomImage from "../utils/CustomImage";
 import propTypes from "prop-types";
+import cssVariables from "../../utils/cssVariables";
 
 const NavigationContainerDiv = styled.div`
   max-height: 800px;
@@ -20,10 +21,10 @@ const NavigationContainerDiv = styled.div`
 
 const Header = styled.h1`
   margin-top: 1.9em;
-  color: #fff;
+  color: ${cssVariables.COLOR_WHITE};
   font-size: 3.5em;
   text-align: center;
-  font-family: "Fraunces", serif;
+  font-family: ${cssVariables.FONT_FAMILY_FRAUNCES};
   margin-bottom: 1.75em;
 `;
 
