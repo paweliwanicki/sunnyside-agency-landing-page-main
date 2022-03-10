@@ -4,13 +4,15 @@ import NavLink from "./NavLink";
 import Button from "../utils/Button";
 import breakpoints from "../../utils/breakpoints";
 import { respondTo } from "../../utils/Mixins";
-import { fadeInDown } from "react-animations";
+import { fadeInDown, fadeOutUp } from "react-animations";
+import cssVariables from "../../utils/cssVariables";
 
 // simple animation
 const fadeInDownAnimation = keyframes`${fadeInDown}`;
+const fadeOutUpAnimation = keyframes`${fadeOutUp}`;
 
 const NavDrawerDiv = styled.div`
-  background-color: #fff;
+  background-color: ${cssVariables.COLOR_WHITE};
   width: 20.62em;
   height: 20.62em;
   position: fixed;
@@ -18,7 +20,8 @@ const NavDrawerDiv = styled.div`
   right: 3em;
   padding: 2.45em;
   box-sizing: border-box;
-  animation: 1s ${fadeInDownAnimation};
+  animation: 1s
+    ${(props) => (props.open ? fadeInDownAnimation : fadeOutUpAnimation)};
 
   ${respondTo(
     breakpoints.device.xs,
@@ -48,13 +51,14 @@ const Content = styled.div`
     height: 0;
     border-style: solid;
     border-width: 0 0 24px 24px;
-    border-color: transparent transparent #ffffff transparent;
+    border-color: transparent transparent ${cssVariables.COLOR_WHITE}
+      transparent;
   }
 `;
 
 const NavDrawer = (props) => {
   return (
-    <NavDrawerDiv>
+    <NavDrawerDiv open={props.open}>
       <Content>
         <NavLink text={`About`} link={"About"} navdrawer />
         <NavLink text={`Services`} link={"Services"} navdrawer />

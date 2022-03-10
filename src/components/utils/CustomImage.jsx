@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import propTypes from "prop-types";
 
-const CustomImageImg = styled.img`
+const StyledImg = styled.img`
   width: ${(props) => props.width};
   display: ${(props) => props.display};
   margin: ${(props) => props.margin};
@@ -10,7 +10,7 @@ const CustomImageImg = styled.img`
 
 const CustomImage = (props) => {
   return (
-    <CustomImageImg
+    <StyledImg
       src={props.src}
       alt={props.alt}
       display={props.display}

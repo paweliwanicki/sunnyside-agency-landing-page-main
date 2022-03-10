@@ -3,8 +3,6 @@ import GridContainer from "../components/GridContainer";
 import NavigationContainer from "../components/navigation/NavigationContainer";
 import "../style.css";
 
-// markup
-
 const IndexPage = () => {
   return (
     <main>

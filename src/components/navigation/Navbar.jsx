@@ -8,12 +8,13 @@ import hamburger from "../../images/icon-hamburger.svg";
 import NavDrawer from "./NavDrawer";
 import breakpoints from "../../utils/breakpoints";
 import { respondTo } from "../../utils/Mixins";
+import cssVariables from "../../utils/cssVariables";
 
-const NavbarNav = styled.nav`
+const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   margin: 2.125em 3em 0 2.5em;
-  color: #fff;
+  color: ${cssVariables.COLOR_WHITE};
   justify-content: space-between;
 
   ${respondTo(
@@ -31,33 +32,34 @@ const NavLinks = styled.div`
   align-items: center;
   flex-wrap: nowrap;
 
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
+  ${respondTo(breakpoints.device.sm, ` display: none;`)}
 `;
 
 const NavDrawerToggler = styled.button`
   display: none;
-  background-color: transparent;
+  background-color: ${cssVariables.TRANSPARENT};
   outline: 0;
   border: 0;
   padding: 0;
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
+  ${respondTo(breakpoints.device.sm, ` display: block;`)}
 `;
 
 const Navbar = (props) => {
   const [navDrawerIsVisible, setNavDrawerIsVisible] = useState(false);
+  const [navDrawerIsOpen, setNavDrawerIsOpen] = useState(false);
 
   const navDrawerTogglerHandler = () => {
-    navDrawerIsVisible
-      ? setNavDrawerIsVisible(false)
-      : setNavDrawerIsVisible(true);
+    if (navDrawerIsVisible) {
+      setNavDrawerIsOpen(false);
+      setTimeout(() => setNavDrawerIsVisible(false), 900);
+    } else {
+      setNavDrawerIsOpen(true);
+      setNavDrawerIsVisible(true);
+    }
   };
 
   return (
-    <NavbarNav>
+    <StyledNav>
       <CustomImage src={logo} alt={`sunnyside `} />
       <NavLinks>
         <NavLink text={`About`} link={"About"} />
@@ -68,8 +70,8 @@ const Navbar = (props) => {
       <NavDrawerToggler onClick={navDrawerTogglerHandler}>
         <CustomImage src={hamburger} alt={`navdrawer toggler`} />
       </NavDrawerToggler>
-      {navDrawerIsVisible && <NavDrawer />}
-    </NavbarNav>
+      {navDrawerIsVisible && <NavDrawer open={navDrawerIsOpen} />}
+    </StyledNav>
   );
 };
 

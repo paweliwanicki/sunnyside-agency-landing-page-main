@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import propTypes from 'prop-types';
+import cssVariables from "../utils/cssVariables";
 
 const GridContainerDiv = styled.div`
   max-width: 1440px;
@@ -8,7 +9,7 @@ const GridContainerDiv = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: 50em auto auto auto;
-  font-family: "Barlow", sans-serif;
+  font-family: ${cssVariables.FONT_FAMILY_BARLOW};
 `;
 
 const GridContainer = (props) => {
