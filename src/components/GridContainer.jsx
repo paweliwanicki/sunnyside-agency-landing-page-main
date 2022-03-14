@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import propTypes from 'prop-types';
-import cssVariables from "../utils/cssVariables";
-import respondTo from "../utils/Mixins";
-//import breakpoints from "../utils/breakpoints";
+import propTypes from "prop-types";
+import CssVariables from "../utils/CssVariables";
 
 const GridContainerDiv = styled.div`
   max-width: 1440px;
@@ -11,9 +9,7 @@ const GridContainerDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 50em auto auto auto;
-  font-family: ${cssVariables.FONT_FAMILY_BARLOW};
-
-  /* ${respondTo(`max-width:`)} */
+  font-family: ${CssVariables.FontFamilyBarlow};
 `;
 
 const GridContainer = (props) => {
@@ -21,7 +17,7 @@ const GridContainer = (props) => {
 };
 
 GridContainer.propTypes = {
-  children: propTypes.node
-}
+  children: propTypes.node,
+};
 
 export default GridContainer;

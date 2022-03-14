@@ -7,8 +7,14 @@ const StyledImg = styled.img`
   height: ${(props) => props.height ? props.height : 'auto' };
   display: ${(props) => props.display};
   margin: ${(props) => props.margin};
-  grid-column: ${(props) => props.gridColumn ? props.gridColumn : ''};
-  grid-row: ${(props) => props.gridRow ? props.gridRow : '' };
+  grid-column: ${(props) => props.desktopGridColumn ? props.desktopGridColumn : ''};
+  grid-row: ${(props) => props.desktopGridRow ? props.desktopGridRow : '' };
+
+  @media screen and (max-width: 45em) {
+    grid-column: ${(props) =>
+      props.mobileGridColumn ? props.mobileGridColumn : ""};
+    grid-row: ${(props) => (props.mobileGridRow ? props.mobileGridRow : "")};
+  }
 `;
 
 const CustomImage = (props) => {
@@ -20,8 +26,10 @@ const CustomImage = (props) => {
       width={props.width}
       display={props.display}
       margin={props.margin}
-      gridColumn={props.gridColumn}
-      gridRow={props.gridRow}
+      desktopGridColumn={props.desktopGridColumn}
+      desktopGridRow={props.desktopGridRow}
+      mobileGridRow={props.mobileGridRow}
+      mobileGridColumn={props.mobileGridColumn}
     />
   );
 };

@@ -2,17 +2,17 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import NavLink from "./NavLink";
 import Button from "../utils/Button";
-import breakpoints from "../../utils/breakpoints";
+import Breakpoints from "../../utils/Breakpoints";
 import { respondTo } from "../../utils/Mixins";
 import { fadeInDown, fadeOutUp } from "react-animations";
-import cssVariables from "../../utils/cssVariables";
+import CssVariables from "../../utils/CssVariables";
 
 // simple animation
 const fadeInDownAnimation = keyframes`${fadeInDown}`;
 const fadeOutUpAnimation = keyframes`${fadeOutUp}`;
 
 const NavDrawerDiv = styled.div`
-  background-color: ${cssVariables.COLOR_WHITE};
+  background-color: ${CssVariables.ColorWhite};
   width: 20.62em;
   height: 20.62em;
   position: fixed;
@@ -24,7 +24,7 @@ const NavDrawerDiv = styled.div`
     ${(props) => (props.open ? fadeInDownAnimation : fadeOutUpAnimation)};
 
   ${respondTo(
-    breakpoints.device.xs,
+    Breakpoints.device.xs,
     `
     margin: 0 1.4375em;
     width: calc(100% - 2.875em);
@@ -51,8 +51,7 @@ const Content = styled.div`
     height: 0;
     border-style: solid;
     border-width: 0 0 24px 24px;
-    border-color: transparent transparent ${cssVariables.COLOR_WHITE}
-      transparent;
+    border-color: Transparent Transparent ${CssVariables.ColorWhite} Transparent;
   }
 `;
 

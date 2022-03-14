@@ -5,7 +5,8 @@ import arrowDown from "../../images/icon-arrow-down.svg";
 import Navbar from "./Navbar";
 import CustomImage from "../utils/CustomImage";
 import propTypes from "prop-types";
-import cssVariables from "../../utils/cssVariables";
+import CssVariables from "../../utils/CssVariables";
+import respondTo from "../../utils/Mixins";
 
 const NavigationContainerDiv = styled.div`
   max-height: 800px;
@@ -21,11 +22,13 @@ const NavigationContainerDiv = styled.div`
 
 const Header = styled.h1`
   margin-top: 1.9em;
-  color: ${cssVariables.COLOR_WHITE};
+  color: ${CssVariables.ColorWhite};
   font-size: 3.5em;
   text-align: center;
-  font-family: ${cssVariables.FONT_FAMILY_FRAUNCES};
+  font-family: ${CssVariables.FontFamilyFraunces};
   margin-bottom: 1.75em;
+
+  ${respondTo(`(max-width: 21.875em)`, `font-size: 2.95em;`)}
 `;
 
 const NavigationContainer = (props) => {

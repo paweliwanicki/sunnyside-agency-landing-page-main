@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import cssVariables from "../../utils/cssVariables";
+import CssVariables from "../../utils/CssVariables";
 
 const TextBoxBgImageDiv = styled.div`
   background-image: ${(props) =>
     props.backgroundImg ? `url(${props.backgroundImg})` : ""};
-  grid-column: ${(props) => (props.gridColumn ? props.gridColumn : "")};
-  grid-row: ${(props) => (props.gridRow ? props.gridRow : "")};
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,13 +14,24 @@ const TextBoxBgImageDiv = styled.div`
   text-align: center;
   justify-content: flex-start;
   align-items: center;
-  color: ${(props) => (props.color ? props.color : cssVariables.COLOR_DARK)};
+  color: ${(props) => (props.color ? props.color : CssVariables.ColorDark)};
   padding-bottom: 2em;
+  grid-column: ${(props) =>
+    props.desktopGridColumn ? props.desktopGridColumn : ""};
+  grid-row: ${(props) => (props.desktopGridRow ? props.desktopGridRow : "")};
+
+  @media screen and (max-width: 45em) {
+    grid-column: ${(props) =>
+      props.mobileGridColumn ? props.mobileGridColumn : ""};
+    grid-row: ${(props) => (props.mobileGridRow ? props.mobileGridRow : "")};
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+  }
 `;
 
 const Header = styled.h2`
-  font-family: ${cssVariables.FONT_FAMILY_FRAUNCES};
-  font-weight: ${cssVariables.FONT_WEIGHT_900};
+  font-family: ${CssVariables.FontFamilyFraunces};
+  font-weight: ${CssVariables.FontWeight900};
   max-width: 21.25em;
   margin-top: 0;
   font-size: 1.75em;
@@ -34,15 +43,17 @@ const Paragraph = styled.p`
   margin: 0;
   line-height: 1.6875em;
   max-width: 21.25em;
-  font-weight: ${cssVariables.FONT_WEIGHT_600};
+  font-weight: ${CssVariables.FontWeight600};
 `;
 
 const TextBoxBgImage = (props) => {
   return (
     <TextBoxBgImageDiv
       backgroundImg={props.backgroundImg}
-      gridColumn={props.gridColumn}
-      gridRow={props.gridRow}
+      desktopGridColumn={props.desktopGridColumn}
+      desktopGridRow={props.desktopGridRow}
+      mobileGridRow={props.mobileGridRow}
+      mobileGridColumn={props.mobileGridColumn}
       color={props.color}
     >
       <Header>{props.headerText}</Header>

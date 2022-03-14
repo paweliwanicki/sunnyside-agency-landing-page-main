@@ -1,25 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import propTypes from "prop-types";
-import cssVariables from "../../utils/cssVariables";
+import CssVariables from "../../utils/CssVariables";
 
 const StyledButton = styled.button`
   background-color: ${(props) =>
-    props.bgColor ? props.bgColor : cssVariables.COLOR_WHITE};
-  font-family: ${cssVariables.FONT_FAMILY_FRAUNCES};
-  color: ${cssVariables.BTN_PRIMARY_COLOR};
+    props.bgColor ? props.bgColor : CssVariables.ColorWhite};
+  font-family: ${CssVariables.FontFamilyFraunces};
+  color: ${CssVariables.BtnPrimaryColor};
   border-radius: 28px;
   padding: 1em 2em;
   line-height: 1.56em;
   font-size: 0.9375em;
-  font-weight: ${cssVariables.FONT_WEIGHT_BOLD};
+  font-weight: ${CssVariables.FontWeightBold};
   border: none;
   outline: none;
   cursor: pointer;
 
   &:hover {
-    background-color: ${cssVariables.BTN_PRIMARY_BG_H_COLOR};
-    color: ${cssVariables.COLOR_WHITE};
+    background-color: ${CssVariables.BtnPrimaryHoverBgColor};
+    color: ${CssVariables.ColorWhite};
   }
 `;
 

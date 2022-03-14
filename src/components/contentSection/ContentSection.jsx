@@ -6,14 +6,16 @@ import cherryImg from "../../images/desktop/image-graphic-design.jpg";
 import glassImg from "../../images/desktop/image-stand-out.jpg";
 import TextBox from "./TextBox";
 import TextBoxBgImage from "./TextBoxBgImage";
-import cssVariables from "../../utils/cssVariables";
+import CssVariables from "../../utils/CssVariables";
 
 const ContentSection = (props) => {
   return (
     <>
       <TextBox
-        gridColumn={`1/3`}
-        gridRow={`2/3`}
+        desktopGridColumn={`1/3`}
+        mobileGridColumn={`1/5`}
+        desktopGridRow={`2/3`}
+        mobileGridRow={`3/4`}
         headerText={`Transform your brand`}
         text={` We are a full-service creative agency specializing in helping brands
           grow fast. Engage your clients through compelling visuals that do most
@@ -22,20 +24,26 @@ const ContentSection = (props) => {
       <CustomImage
         src={eggImg}
         alt={`egg`}
-        gridColumn={`3/5`}
-        gridRow={`2/3`}
+        desktopGridColumn={`3/5`}
+        desktopGridRow={`2/3`}
+        mobileGridRow={`4/5`}
+        mobileGridColumn={`1/5`}
         width={`100%`}
       />
       <CustomImage
         src={glassImg}
         alt={`glass`}
-        gridColumn={`1/3`}
-        gridRow={`3/4`}
+        desktopGridColumn={`1/3`}
+        desktopGridRow={`3/4`}
+        mobileGridRow={`5/6`}
+        mobileGridColumn={`1/5`}
         width={`100%`}
       />
       <TextBox
-        gridColumn={`3/5`}
-        gridRow={`3/4`}
+        desktopGridColumn={`3/5`}
+        desktopGridRow={`3/4`}
+        mobileGridRow={`6/7`}
+        mobileGridColumn={`1/5`}
         headerText={`Stand out to the right audience`}
         text={`Using a collaborative formula of designers, researchers,
           photographers, videographers, and copywriters, we’ll build and extend
@@ -43,18 +51,22 @@ const ContentSection = (props) => {
       />
       <TextBoxBgImage
         backgroundImg={cherryImg}
-        gridColumn={`1/3`}
-        gridRow={`4/5`}
-        color={cssVariables.COLOR_DARK_GREEN}
+        desktopGridColumn={`1/3`}
+        desktopGridRow={`4/5`}
+        mobileGridRow={`7/8`}
+        mobileGridColumn={`1/5`}
+        color={CssVariables.ColorDarkGreen}
         headerText={`Graphic Design`}
         text={`Great design makes you memorable. We deliver artwork that underscores
           your brand message and captures potential clients’ attention.`}
       ></TextBoxBgImage>
       <TextBoxBgImage
         backgroundImg={orangeImg}
-        gridColumn={`3/5`}
-        gridRow={`4/5`}
-        color={cssVariables.COLOR_DARK_BLUE}
+        desktopGridColumn={`3/5`}
+        desktopGridRow={`4/5`}
+        mobileGridRow={`8/9`}
+        mobileGridColumn={`1/5`}
+        color={CssVariables.ColorDarkBlue}
         headerText={`Photography`}
         text={`Increase your credibility by getting the most stunning, high-quality
           photos that improve your business image.`}

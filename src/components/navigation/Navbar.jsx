@@ -6,19 +6,19 @@ import NavLink from "./NavLink";
 import logo from "../../images/logo.svg";
 import hamburger from "../../images/icon-hamburger.svg";
 import NavDrawer from "./NavDrawer";
-import breakpoints from "../../utils/breakpoints";
+import Breakpoints from "../../utils/Breakpoints";
 import { respondTo } from "../../utils/Mixins";
-import cssVariables from "../../utils/cssVariables";
+import CssVariables from "../../utils/CssVariables";
 
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  margin: 2.125em 3em 0 2.5em;
-  color: ${cssVariables.COLOR_WHITE};
+  margin: 2em 3em 0 2.5em;
+  color: ${CssVariables.ColorWhite};
   justify-content: space-between;
 
   ${respondTo(
-    breakpoints.device.xs,
+    Breakpoints.device.xs,
     `
     margin-left:  1.4375em;
     margin-right:  1.4375em;
@@ -32,16 +32,16 @@ const NavLinks = styled.div`
   align-items: center;
   flex-wrap: nowrap;
 
-  ${respondTo(breakpoints.device.sm, ` display: none;`)}
+  ${respondTo(Breakpoints.device.sm, ` display: none;`)}
 `;
 
 const NavDrawerToggler = styled.button`
   display: none;
-  background-color: ${cssVariables.TRANSPARENT};
+  background-color: ${CssVariables.Transparent};
   outline: 0;
   border: 0;
   padding: 0;
-  ${respondTo(breakpoints.device.sm, ` display: block;`)}
+  ${respondTo(Breakpoints.device.sm, ` display: block;`)}
 `;
 
 const Navbar = (props) => {
