@@ -1,20 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import propTypes from "prop-types";
+import { mediaQueries } from "../../utils/Mixins";
 
 const StyledImg = styled.img`
-  width: ${(props) => props.width ? props.width : 'initial' };
-  height: ${(props) => props.height ? props.height : 'auto' };
+  width: ${(props) => (props.width ? props.width : "initial")};
+  height: ${(props) => (props.height ? props.height : "auto")};
   display: ${(props) => props.display};
   margin: ${(props) => props.margin};
-  grid-column: ${(props) => props.desktopGridColumn ? props.desktopGridColumn : ''};
-  grid-row: ${(props) => props.desktopGridRow ? props.desktopGridRow : '' };
+  grid-column: ${(props) =>
+    props.desktopGridColumn ? props.desktopGridColumn : ""};
+  grid-row: ${(props) => (props.desktopGridRow ? props.desktopGridRow : "")};
 
-  @media screen and (max-width: 45em) {
+  ${mediaQueries.tabletS`
     grid-column: ${(props) =>
       props.mobileGridColumn ? props.mobileGridColumn : ""};
     grid-row: ${(props) => (props.mobileGridRow ? props.mobileGridRow : "")};
-  }
+  `}
 `;
 
 const CustomImage = (props) => {

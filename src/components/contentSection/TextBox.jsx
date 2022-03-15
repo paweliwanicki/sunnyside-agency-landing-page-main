@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Breakpoints from "../../utils/Breakpoints";
 import CssVariables from "../../utils/CssVariables";
-import respondTo from "../../utils/Mixins";
+import { respondTo, mediaQueries } from "../../utils/Mixins";
 
 const TextBoxDiv = styled.div`
   grid-column: ${(props) =>
@@ -24,26 +23,21 @@ const TextBoxDiv = styled.div`
   line-height: 1.7em;
   font-size: 1.1375em;
 
-  @media screen and (max-width: 45em) {
-    grid-column: ${(props) =>
-      props.mobileGridColumn ? props.mobileGridColumn : ""};
+  ${mediaQueries.tabletS`
+    grid-column: ${(props) => props.mobileGridColumn ? props.mobileGridColumn : ""};
     grid-row: ${(props) => (props.mobileGridRow ? props.mobileGridRow : "")};
-
     padding-top: 4em;
     padding-bottom: 4em;
     margin-left: 1.25em;
     margin-right: 1.25em;
     text-align: center;
-  }
+  `};
 
-  ${respondTo(
-    `(max-width: 84.375em)`,
-    `
+  ${mediaQueries.laptopL`
     padding-right:0;
     padding-left:0;
     align-items:center;
-  `
-  )}
+  `}
 
   a {
     color: ${CssVariables.ColorDark};
@@ -67,14 +61,11 @@ const Header = styled.h2`
   margin-bottom: 0.7em;
   max-width: 9.8em;
 
-  ${respondTo(
-    Breakpoints.device.sm,
-    `
+  ${mediaQueries.laptopL`
     font-size: 1.87em;
     margin-left: auto;
     margin-right: auto;
-  `
-  )}
+  `}
 `;
 
 const Paragraph = styled.p`

@@ -2,8 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import NavLink from "./NavLink";
 import Button from "../utils/Button";
-import Breakpoints from "../../utils/Breakpoints";
-import { respondTo } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/Mixins";
 import { fadeInDown, fadeOutUp } from "react-animations";
 import CssVariables from "../../utils/CssVariables";
 
@@ -23,14 +22,11 @@ const NavDrawerDiv = styled.div`
   animation: 1s
     ${(props) => (props.open ? fadeInDownAnimation : fadeOutUpAnimation)};
 
-  ${respondTo(
-    Breakpoints.device.xs,
-    `
+  ${mediaQueries.mobileL`
     margin: 0 1.4375em;
     width: calc(100% - 2.875em);
     right:0;
-  `
-  )}
+  `};
 `;
 
 const Content = styled.div`

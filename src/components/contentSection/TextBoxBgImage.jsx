@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CssVariables from "../../utils/CssVariables";
+import { mediaQueries } from "../../utils/Mixins";
 
 const TextBoxBgImageDiv = styled.div`
   background-image: ${(props) =>
@@ -20,13 +21,12 @@ const TextBoxBgImageDiv = styled.div`
     props.desktopGridColumn ? props.desktopGridColumn : ""};
   grid-row: ${(props) => (props.desktopGridRow ? props.desktopGridRow : "")};
 
-  @media screen and (max-width: 45em) {
-    grid-column: ${(props) =>
-      props.mobileGridColumn ? props.mobileGridColumn : ""};
+  ${mediaQueries.tabletS`
+    grid-column: ${(props) => props.mobileGridColumn ? props.mobileGridColumn : ""};
     grid-row: ${(props) => (props.mobileGridRow ? props.mobileGridRow : "")};
     padding-left: 1.25em;
     padding-right: 1.25em;
-  }
+  `}
 `;
 
 const Header = styled.h2`

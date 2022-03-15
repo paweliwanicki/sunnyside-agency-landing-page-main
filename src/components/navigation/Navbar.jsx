@@ -6,8 +6,7 @@ import NavLink from "./NavLink";
 import logo from "../../images/logo.svg";
 import hamburger from "../../images/icon-hamburger.svg";
 import NavDrawer from "./NavDrawer";
-import Breakpoints from "../../utils/Breakpoints";
-import { respondTo } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/Mixins";
 import CssVariables from "../../utils/CssVariables";
 
 const StyledNav = styled.nav`
@@ -17,13 +16,10 @@ const StyledNav = styled.nav`
   color: ${CssVariables.ColorWhite};
   justify-content: space-between;
 
-  ${respondTo(
-    Breakpoints.device.xs,
-    `
+  ${mediaQueries.mobileL`
     margin-left:  1.4375em;
     margin-right:  1.4375em;
-  `
-  )}
+  `}
 `;
 
 const NavLinks = styled.div`
@@ -32,7 +28,9 @@ const NavLinks = styled.div`
   align-items: center;
   flex-wrap: nowrap;
 
-  ${respondTo(Breakpoints.device.sm, ` display: none;`)}
+  ${mediaQueries.tabletS`
+    display: none;
+  `}
 `;
 
 const NavDrawerToggler = styled.button`
@@ -41,7 +39,10 @@ const NavDrawerToggler = styled.button`
   outline: 0;
   border: 0;
   padding: 0;
-  ${respondTo(Breakpoints.device.sm, ` display: block;`)}
+
+  ${mediaQueries.tabletS`
+    display: block;
+  `}
 `;
 
 const Navbar = (props) => {

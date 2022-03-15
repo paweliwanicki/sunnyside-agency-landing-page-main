@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 import CustomImage from "../utils/CustomImage";
 import propTypes from "prop-types";
 import CssVariables from "../../utils/CssVariables";
-import respondTo from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/Mixins";
 
 const NavigationContainerDiv = styled.div`
   max-height: 800px;
@@ -28,7 +28,9 @@ const Header = styled.h1`
   font-family: ${CssVariables.FontFamilyFraunces};
   margin-bottom: 1.75em;
 
-  ${respondTo(`(max-width: 21.875em)`, `font-size: 2.95em;`)}
+  ${mediaQueries.mobileM`
+   font-size: 2.95em;
+  `};
 `;
 
 const NavigationContainer = (props) => {
