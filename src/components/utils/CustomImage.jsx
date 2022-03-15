@@ -12,6 +12,8 @@ const StyledImg = styled.img`
     props.desktopGridColumn ? props.desktopGridColumn : ""};
   grid-row: ${(props) => (props.desktopGridRow ? props.desktopGridRow : "")};
 
+  ${(props) => props.customCss}
+
   ${mediaQueries.tabletS`
     grid-column: ${(props) =>
       props.mobileGridColumn ? props.mobileGridColumn : ""};
@@ -20,6 +22,7 @@ const StyledImg = styled.img`
 `;
 
 const CustomImage = (props) => {
+  console.log(props);
   return (
     <StyledImg
       src={props.src}
@@ -32,6 +35,7 @@ const CustomImage = (props) => {
       desktopGridRow={props.desktopGridRow}
       mobileGridRow={props.mobileGridRow}
       mobileGridColumn={props.mobileGridColumn}
+      customCss={props.customCss}
     />
   );
 };

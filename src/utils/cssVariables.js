@@ -2,7 +2,9 @@ const CssVariables = {
   // colors
   ColorWhite: "#fff",
   ColorLightBlue: "#78cdf5",
+  colorGrayLight: "#A7AAAD",
   ColorGray: "#808397",
+  ColorGrayDark: "#5B636D",
   ColorYellow: "#FBD600",
   Transparent: "Transparent",
   ColorDark: '#24303e',
