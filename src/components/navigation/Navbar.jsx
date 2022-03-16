@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import CustomImage from "../utils/CustomImage";
 import Button from "../utils/Button";
-import NavLink from "./NavLink";
 import logo from "../../images/logo.svg";
 import hamburger from "../../images/icon-hamburger.svg";
 import NavDrawer from "./NavDrawer";
 import { mediaQueries } from "../../utils/Mixins";
 import CssVariables from "../../utils/CssVariables";
+import NavLinks from "./NavLinks";
 
 const StyledNav = styled.nav`
   display: flex;
@@ -22,12 +22,7 @@ const StyledNav = styled.nav`
   `}
 `;
 
-const NavLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-
+const NavLinksCustomCss = css`
   ${mediaQueries.tabletS`
     display: none;
   `}
@@ -62,10 +57,7 @@ const Navbar = (props) => {
   return (
     <StyledNav>
       <CustomImage src={logo} alt={`sunnyside `} />
-      <NavLinks>
-        <NavLink text={`About`} link={"About"} />
-        <NavLink text={`Services`} link={"Services"} />
-        <NavLink text={`Projects`} link={"Projects"} />
+      <NavLinks customCss={NavLinksCustomCss}>
         <Button text={`CONTACT`} />
       </NavLinks>
       <NavDrawerToggler onClick={navDrawerTogglerHandler}>

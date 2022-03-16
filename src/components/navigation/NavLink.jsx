@@ -8,9 +8,7 @@ const StyledNavLink = styled.div`
   width: max-content;
   font-size: 1.125em;
   font-weight: ${CssVariables.FontWeight600};
-  color: ${(props) =>
-    props.navdrawer ? CssVariables.ColorGray : CssVariables.ColorWhite};
-  margin-right: ${(props) => (props.navdrawer ? "" : "2.95em")};
+  color: inherit;
 
   a {
     text-decoration: none;

@@ -4,8 +4,9 @@ import TestimonialBox from "./TestimonialBox";
 import userEmilyImg from "../../images/image-emily.jpg";
 import userJennyImg from "../../images/image-jennie.jpg";
 import userThomasImg from "../../images/image-thomas.jpg";
-import User from "./User";
+import User from "../../classes/User";
 import CssVariables from "../../utils/CssVariables";
+import { mediaQueries } from "../../utils/Mixins";
 
 const StyledSection = styled.section`
   grid-column: 1/5;
@@ -14,6 +15,25 @@ const StyledSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 10em 10.3125em;
+  flex-flow: column;
+
+  ${mediaQueries.laptopL`
+    padding-left:3em;
+    padding-right:3em;
+  `}
+
+  ${mediaQueries.laptopM`
+    padding-left:1em;
+    padding-right:1em;
+    font-size:.9em;
+  `}
+  ${mediaQueries.laptopS`
+    font-size:initial;
+  `}
+
+${mediaQueries.tabletS`
+   grid-row: 9/10;
+  `}
 `;
 
 const SectionHeader = styled.h4`
@@ -21,12 +41,21 @@ const SectionHeader = styled.h4`
   font-family: ${CssVariables.FontFamilyFraunces};
   color: ${CssVariables.colorGrayLight};
   font-size: 1.5em;
+  margin-bottom: 5.0625em;
+  letter-spacing: 0.21em;
+  align-self: center;
+  text-align: center;
 `;
 
 const TestimonialsBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${mediaQueries.laptopS`
+    flex-flow: column;
+    justify-content: space-between;
+  `}
 `;
 
 const TestimonialsSection = (props) => {

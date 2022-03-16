@@ -5,8 +5,9 @@ const sizes = {
   mobileL: "450",
   tabletS: "720",
   tabletM: "768",
-  laptop: "1024",
-  laptopL: "1350",
+  laptopS: "1024",
+  laptopM: "1190",
+  laptopL: "1425",
   desktop: "2560",
 };
 
@@ -16,7 +17,8 @@ const device = {
   mobileL: `(max-width: ${sizes.mobileL})`,
   tabletS: `(max-width: ${sizes.tabletS})`,
   tabletM: `(max-width: ${sizes.tabletM})`,
-  laptop: `(max-width: ${sizes.laptop})`,
+  laptopS: `(max-width: ${sizes.laptopS})`,
+  laptopM: `(max-width: ${sizes.laptopM})`,
   laptopL: `(max-width: ${sizes.laptopL})`,
   desktop: `(max-width: ${sizes.desktop})`,
 };

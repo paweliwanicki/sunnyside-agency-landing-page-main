@@ -27,9 +27,10 @@ const Header = styled.h1`
   text-align: center;
   font-family: ${CssVariables.FontFamilyFraunces};
   margin-bottom: 1.75em;
+  letter-spacing: 0.157em;
 
-  ${mediaQueries.mobileM`
-   font-size: 2.95em;
+  ${mediaQueries.mobileL`
+   font-size: 2.75em;
   `};
 `;
 

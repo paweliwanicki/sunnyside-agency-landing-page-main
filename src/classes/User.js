@@ -8,16 +8,15 @@ class User {
   getFullname() {
     return this.fullname;
   }
-  
+
   setFullname(fullname) {
     this.fullname = fullname;
   }
 
-  
   getPosition() {
     return this.position;
   }
-  
+
   setPosition(position) {
     this.position = position;
   }

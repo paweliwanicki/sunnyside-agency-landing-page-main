@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import CustomImage from "../utils/CustomImage";
 import CssVariables from "../../utils/CssVariables";
+import { mediaQueries } from "../../utils/Mixins";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -10,6 +11,11 @@ const StyledDiv = styled.div`
   justify-content: center;
   text-align: center;
   padding: 0 0.9375em;
+  min-width: 15em;
+
+  ${mediaQueries.laptopS`
+    margin-bottom: 4em;
+  `}
 `;
 
 const Paragraph = styled.p`
@@ -33,6 +39,9 @@ const UserFullname = styled.p`
 
 const UserPosition = styled.p`
   color: ${CssVariables.colorGrayLight};
+  font-size: 0.875em;
+  font-weight: ${CssVariables.FontWeight600};
+  line-height: 1.785em;
 `;
 
 const CustomImageStyles = css`

@@ -4,6 +4,7 @@ import TestimonialsSection from "../components/TestimonialsSection/TestimonialsS
 import GridContainer from "../components/GridContainer";
 import NavigationContainer from "../components/navigation/NavigationContainer";
 import "../style.css";
+import Footer from "../components/TestimonialsSection/footer/Footer";
 
 const IndexPage = () => {
   return (
@@ -12,6 +13,7 @@ const IndexPage = () => {
         <NavigationContainer />
         <ContentSection />
         <TestimonialsSection />
+        <Footer />
       </GridContainer>
     </main>
   );

@@ -24,3 +24,8 @@ export const mediaQueries = Object.keys(Breakpoints.sizes).reduce(
   },
   {}
 );
+
+// preprocesor props for react-inlinesvg
+export const setColorSVG = (color) => {
+  return code => code.replace(/fill=".*?"/g, `fill="${color}"`)
+}

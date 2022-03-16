@@ -19,6 +19,7 @@ const NavDrawerDiv = styled.div`
   right: 3em;
   padding: 2.45em;
   box-sizing: border-box;
+  color: ${CssVariables.ColorGray};
   animation: 1s
     ${(props) => (props.open ? fadeInDownAnimation : fadeOutUpAnimation)};
 
