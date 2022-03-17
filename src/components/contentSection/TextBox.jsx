@@ -24,7 +24,8 @@ const TextBoxDiv = styled.div`
   font-size: 1.1375em;
 
   ${mediaQueries.tabletS`
-    grid-column: ${(props) => props.mobileGridColumn ? props.mobileGridColumn : ""};
+    grid-column: ${(props) =>
+      props.mobileGridColumn ? props.mobileGridColumn : ""};
     grid-row: ${(props) => (props.mobileGridRow ? props.mobileGridRow : "")};
     padding-top: 4em;
     padding-bottom: 4em;

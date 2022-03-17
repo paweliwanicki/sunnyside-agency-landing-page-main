@@ -22,7 +22,8 @@ const TextBoxBgImageDiv = styled.div`
   grid-row: ${(props) => (props.desktopGridRow ? props.desktopGridRow : "")};
 
   ${mediaQueries.tabletS`
-    grid-column: ${(props) => props.mobileGridColumn ? props.mobileGridColumn : ""};
+    grid-column: ${(props) =>
+      props.mobileGridColumn ? props.mobileGridColumn : ""};
     grid-row: ${(props) => (props.mobileGridRow ? props.mobileGridRow : "")};
     padding-left: 1.25em;
     padding-right: 1.25em;

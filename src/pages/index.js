@@ -4,7 +4,7 @@ import TestimonialsSection from "../components/TestimonialsSection/TestimonialsS
 import GridContainer from "../components/GridContainer";
 import NavigationContainer from "../components/navigation/NavigationContainer";
 import "../style.css";
-import Footer from "../components/TestimonialsSection/footer/Footer";
+import Footer from "../components/footer/Footer";
 
 const IndexPage = () => {
   return (

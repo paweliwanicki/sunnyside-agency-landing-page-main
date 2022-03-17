@@ -13,12 +13,16 @@ const StyledNavLink = styled.div`
   a {
     text-decoration: none;
     color: inherit;
+
+    &:hover {
+      color: ${(props) => (props.footer ? CssVariables.ColorWhite : "inherit")};
+    }
   }
 `;
 
 const NavLink = (props) => {
   return (
-    <StyledNavLink navdrawer={props.navdrawer}>
+    <StyledNavLink navdrawer={props.navdrawer} footer={props.footer}>
       <Link to={`#${props.link}`}>{props.text}</Link>
     </StyledNavLink>
   );

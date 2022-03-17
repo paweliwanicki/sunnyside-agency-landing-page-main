@@ -22,7 +22,6 @@ const StyledImg = styled.img`
 `;
 
 const CustomImage = (props) => {
-  console.log(props);
   return (
     <StyledImg
       src={props.src}

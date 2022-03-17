@@ -16,11 +16,12 @@ const StyledDiv = styled.div`
 `;
 
 const NavLinks = (props) => {
+  console.log(props.footer);
   return (
     <StyledDiv customCss={props.customCss} footer={props.footer}>
-      <NavLink text={`About`} link={"About"} />
-      <NavLink text={`Services`} link={"Services"} />
-      <NavLink text={`Projects`} link={"Projects"} />
+      <NavLink text={`About`} footer={props.footer} link={"About"} />
+      <NavLink text={`Services`} footer={props.footer} link={"Services"} />
+      <NavLink text={`Projects`} footer={props.footer} link={"Projects"} />
       {props.children}
     </StyledDiv>
   );
