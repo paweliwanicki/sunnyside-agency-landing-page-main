@@ -9,7 +9,8 @@ module.exports = {
         resolve: `gatsby-plugin-google-fonts`,
         options: {
           fonts: [
-            `Barlow\:400,500,600,700,900`,`Fraunces\:400,500,600,700,900`,
+            `Barlow\:400,500,600,700,900`,
+            `Fraunces\:400,500,600,700,900`,
             `source sans pro\:300,400,400i,700`
           ],
           display: 'swap'

@@ -1,4 +1,5 @@
 import * as React from "react";
+import ContentSection from "../components/contentSection/contentSection";
 import GridContainer from "../components/GridContainer";
 import NavigationContainer from "../components/navigation/NavigationContainer";
 import "../style.css";
@@ -8,6 +9,7 @@ const IndexPage = () => {
     <main>
       <GridContainer>
         <NavigationContainer />
+        <ContentSection />
       </GridContainer>
     </main>
   );

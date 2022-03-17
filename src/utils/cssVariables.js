@@ -1,24 +1,27 @@
-const cssVariables = {
+const CssVariables = {
   // colors
-  COLOR_WHITE: "#fff",
-  COLOR_LIGHT_BLUE: "#78cdf5",
-  COLOR_GRAY: "#808397",
-  COLOR_YELLOW: "#FBD600",
-  TRANSPARENT: "transparent",
+  ColorWhite: "#fff",
+  ColorLightBlue: "#78cdf5",
+  ColorGray: "#808397",
+  ColorYellow: "#FBD600",
+  Transparent: "Transparent",
+  ColorDark: '#24303e',
+  ColorDarkBlue: '#24303e',
+  ColorDarkGreen: '#24554A',
 
   // fonts
-  FONT_FAMILY_BARLOW: `'Barlow', sans-serif`,
-  FONT_FAMILY_FRAUNCES: `'Fraunces', serif`,
-  FONT_WEIGHT_NORMAL: 500,
-  FONT_WEIGHT_BOLD: 700,
-  FONT_WEIGHT_600: 600,
-  FONT_WEIGHT_900: 900,
+  FontFamilyBarlow: `'Barlow', sans-serif`,
+  FontFamilyFraunces: `'Fraunces', serif`,
+  FontWeightNormal: 500,
+  FontWeightBold: 700,
+  FontWeight600: 600,
+  FontWeight900: 900,
 
   // buttons
-  BTN_PRIMARY_BG_COLOR: "#fff",
-  BTN_PRIMARY_BG_H_COLOR: "#78cdf5",
-  BTN_PRIMARY_COLOR: `#24303e`,
-  BTN_PRIMARY_H_COLOR: "#fff",
+  BtnPrimaryBgColor: "#fff",
+  BtnPrimaryHoverBgColor: "#78cdf5",
+  BtnPrimaryColor: `#24303e`,
+  BtnPrimaryHoverColor: "#fff",
 };
 
-export default cssVariables;
+export default CssVariables;
