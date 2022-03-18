@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import backgroundImage from "../../images/desktop/image-header.jpg";
-import arrowDown from "../../images/icon-arrow-down.svg";
 import Navbar from "./Navbar";
-import CustomImage from "../utils/CustomImage";
 import propTypes from "prop-types";
 import CssVariables from "../../utils/CssVariables";
 import { mediaQueries } from "../../utils/Mixins";
+import Icon from "../utils/Icon";
 
 const NavigationContainerDiv = styled.div`
   max-height: 800px;
@@ -29,6 +28,15 @@ const Header = styled.h1`
   margin-bottom: 1.75em;
   letter-spacing: 0.157em;
 
+  svg {
+    display: block;
+    margin: 95px auto 0 auto;
+  }
+
+  ${mediaQueries.tabletS`
+     margin-top:145px;
+    `};
+
   ${mediaQueries.mobileL`
    font-size: 2.75em;
   `};
@@ -38,13 +46,15 @@ const NavigationContainer = (props) => {
   return (
     <NavigationContainerDiv>
       <Navbar />
-      <Header>WE ARE CREATIVES</Header>
-      <CustomImage
+      <Header>WE ARE CREATIVES
+        <Icon id="icon-arrow-down" width="36" height="114" color={CssVariables.ColorWhite}/>
+      </Header>
+      {/* <CustomImage
         src={arrowDown}
         alt={`arrow, navigate to site`}
         display={`block`}
         margin={`auto`}
-      />
+      /> */}
       {props.children}
     </NavigationContainerDiv>
   );

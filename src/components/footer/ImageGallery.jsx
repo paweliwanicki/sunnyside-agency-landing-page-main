@@ -4,6 +4,7 @@ import CustomImage from "../utils/CustomImage";
 const ImageGallery = (props) => {
   return Object.keys(props.images).map((key) => {
     const image = props.images[key];
+    
     return (
       <CustomImage
         key={key}

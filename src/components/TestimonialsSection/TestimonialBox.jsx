@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import CustomImage from "../utils/CustomImage";
 import CssVariables from "../../utils/CssVariables";
 import { mediaQueries } from "../../utils/Mixins";
+import propTypes from 'prop-types';
 
 const StyledDiv = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ const Paragraph = styled.p`
   text-align: inherit;
   margin-bottom: 4.3125em;
   font-weight: ${CssVariables.FontWeight600};
-  line-height: 2em;
+  line-height: 1.778em;
   max-width: 19.45em;
   font-size: 1.125em;
 `;
@@ -65,6 +66,11 @@ const TestimonialBox = (props) => {
       </UserInfo>
     </StyledDiv>
   );
+};
+
+TestimonialBox.propTypes = {
+  user : propTypes.object.isRequired,
+  text : propTypes.string.isRequired
 };
 
 export default TestimonialBox;

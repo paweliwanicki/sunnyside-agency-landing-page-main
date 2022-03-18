@@ -1,19 +1,32 @@
-import styled from "styled-components";
-import CssVariables from "../../utils/CssVariables";
+import React, { useState } from "react";
+import Icons from "../../images/svg-sprite.svg";
 
-const Icon = styled.svg.attrs({
-  version: "1.1",
-  xmlns: "http://www.w3.org/2000/svg",
-  xmlnsXlink: "http://www.w3.org/1999/xlink",
-  width: "20",
-  height: "20",
-})``;
+const Icon = (props) => {
+  const [color, setColor] = useState(props.color);
+  const onMouseEnterHandler = () => {
+    if (props.hoverColor) {
+      setColor(props.hoverColor);
+    }
+  };
+  const onMouseLeaveHandler = () => {
+    setColor(props.color);
+  };
 
-const Svg = styled(Icon)`
-  cursor: pointer;
-  &:hover {
-    color: ${CssVariables.ColorWhite};
-  }
-`;
+  // set default values
+  const height = props.height ? props.height : "24";
+  const width = props.width ? props.width : "24";
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
+      fill={color}
+      onMouseEnter={onMouseEnterHandler}
+      onMouseLeave={onMouseLeaveHandler}
+    >
+      <use href={Icons + `#${props.id}`} />
+    </svg>
+  );
+};
 
-export default Svg;
+export default Icon;

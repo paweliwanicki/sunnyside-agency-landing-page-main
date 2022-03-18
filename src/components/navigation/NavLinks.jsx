@@ -16,7 +16,6 @@ const StyledDiv = styled.div`
 `;
 
 const NavLinks = (props) => {
-  console.log(props.footer);
   return (
     <StyledDiv customCss={props.customCss} footer={props.footer}>
       <NavLink text={`About`} footer={props.footer} link={"About"} />

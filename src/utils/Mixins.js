@@ -1,16 +1,6 @@
 import { css } from "styled-components";
 import Breakpoints from "./Breakpoints";
 
-// help function for custom breakpoints
-export const respondTo = (breakpoint, styles = "") => {
-  const breakpointProps = `
-    @media screen and ${breakpoint} {
-      ${styles}
-    }
-    `;
-  return css([breakpointProps]);
-};
-
 // mixin/breakpoints inspiration -> https://github.com/styled-components/styled-components/blob/main/packages/styled-components/docs/tips-and-tricks.md#media-templates
 export const mediaQueries = Object.keys(Breakpoints.sizes).reduce(
   (accumulator, label) => {
@@ -24,8 +14,3 @@ export const mediaQueries = Object.keys(Breakpoints.sizes).reduce(
   },
   {}
 );
-
-// preprocesor props for react-inlinesvg
-export const setColorSVG = (color) => {
-  return code => code.replace(/fill=".*?"/g, `fill="${color}"`)
-}

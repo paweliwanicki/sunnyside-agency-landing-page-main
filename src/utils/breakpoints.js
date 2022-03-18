@@ -9,6 +9,7 @@ const sizes = {
   laptopM: "1190",
   laptopL: "1425",
   desktop: "2560",
+  customTabletMinMax: "",
 };
 
 const device = {
@@ -21,6 +22,8 @@ const device = {
   laptopM: `(max-width: ${sizes.laptopM})`,
   laptopL: `(max-width: ${sizes.laptopL})`,
   desktop: `(max-width: ${sizes.desktop})`,
+  customTabletMax: `(max-width: ${sizes.customTabletMax})`,
+  
 };
 
 const Breakpoints = {

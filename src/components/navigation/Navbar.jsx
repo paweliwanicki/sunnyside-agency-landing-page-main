@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import CustomImage from "../utils/CustomImage";
 import Button from "../utils/Button";
-import logo from "../../images/logo.svg";
-import hamburger from "../../images/icon-hamburger.svg";
 import NavDrawer from "./NavDrawer";
 import { mediaQueries } from "../../utils/Mixins";
 import CssVariables from "../../utils/CssVariables";
 import NavLinks from "./NavLinks";
+import Icon from "../utils/Icon";
 
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  margin: 2em 3em 0 2.5em;
+  margin: 34px 48px 0 40px;
   color: ${CssVariables.ColorWhite};
   justify-content: space-between;
 
-  ${mediaQueries.mobileL`
-    margin-left:  1.4375em;
-    margin-right:  1.4375em;
+  ${mediaQueries.tabletS`
+    margin:0;
+    padding: 32px 24px 32px 24px;
+    background-color: #3dbeff;
+    position:fixed;
+    width:100%;
   `}
 `;
 
@@ -56,12 +57,16 @@ const Navbar = (props) => {
 
   return (
     <StyledNav>
-      <CustomImage src={logo} alt={`sunnyside `} />
+      <Icon id={"logo"} color={CssVariables.ColorWhite} width={"124"} />
       <NavLinks customCss={NavLinksCustomCss}>
         <Button text={`CONTACT`} />
       </NavLinks>
       <NavDrawerToggler onClick={navDrawerTogglerHandler}>
-        <CustomImage src={hamburger} alt={`navdrawer toggler`} />
+        <Icon
+          id={"icon-hamburger"}
+          color={CssVariables.ColorWhite}
+          height={"18"}
+        />
       </NavDrawerToggler>
       {navDrawerIsVisible && <NavDrawer open={navDrawerIsOpen} />}
     </StyledNav>

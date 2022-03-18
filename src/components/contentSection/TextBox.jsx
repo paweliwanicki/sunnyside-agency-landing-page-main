@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CssVariables from "../../utils/CssVariables";
-import { respondTo, mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/Mixins";
 
 const TextBoxDiv = styled.div`
   grid-column: ${(props) =>
@@ -61,12 +61,11 @@ const Header = styled.h2`
   margin-top: 0;
   margin-bottom: 0.7em;
   max-width: 9.8em;
+  text-align: left;
 
   ${mediaQueries.laptopL`
     font-size: 1.87em;
-    margin-left: auto;
-    margin-right: auto;
-  `}
+  `};
 `;
 
 const Paragraph = styled.p`
@@ -79,19 +78,13 @@ const ContentDiv = styled.div`
   width: fit-content;
   height: fit-content;
 
-  ${respondTo(
-    `(max-width: 33.75em)`,
-    `
-    margin:auto;
-  `
-  )}
+  ${mediaQueries.laptopS`
+  font-size:0.7em;
+  `}
 
-  ${respondTo(
-    `(min-width: 45.01em) and (max-width: 61.25em)`,
-    `
-    font-size:0.7em;
-  `
-  )}
+  ${mediaQueries.tabletS`
+    font-size:initial;
+  `}
 `;
 
 const TextBox = (props) => {

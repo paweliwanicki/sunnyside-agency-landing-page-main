@@ -1,27 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 import CssVariables from "../../utils/CssVariables";
-import FacebookIcon from "../icons/FacebookIcon";
-import InstagramIcon from "../icons/InstagramIcon";
-import TwitterIcon from "../icons/TwitterIcon";
-import PinterestIcon from "../icons/PinterestIcon";
+import Icon from "../utils/Icon";
 
 const StyledDiv = styled.div`
   display: flex;
-  width: 10.25em;
+  width: 165px;
   justify-content: space-between;
   align-items: center;
-
   color: ${CssVariables.ColorGreen};
+
+  svg {
+    cursor: pointer;
+  }
 `;
+
+const iconsID = [
+  "icon-facebook",
+  "icon-instagram",
+  "icon-twitter",
+  "icon-pinterest",
+];
 
 const NavIcons = (props) => {
   return (
     <StyledDiv>
-      <FacebookIcon />
-      <InstagramIcon />
-      <TwitterIcon />
-      <PinterestIcon />
+      {iconsID.map((id) => {
+        return <Icon
+          id={id}
+          key={id}
+          color={CssVariables.ColorGreen}
+          hoverColor={CssVariables.ColorWhite}
+        />;
+      })}
     </StyledDiv>
   );
 };

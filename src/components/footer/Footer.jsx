@@ -1,13 +1,12 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import logoImg from "../../images/logo.svg";
-import { mediaQueries, setColorSVG } from "../../utils/Mixins";
-import Svg from "react-inlinesvg";
+import { mediaQueries } from "../../utils/Mixins";
 import CssVariables from "../../utils/CssVariables";
 import NavLinks from "../navigation/NavLinks";
 import NavIcons from "./NavIcons";
 import ImageGallery from "./ImageGallery";
 import { galleryImages } from "./Images";
+import Icon from "../utils/Icon";
 
 const StyledFooter = styled.footer`
   grid-column: 1/5;
@@ -39,10 +38,7 @@ const Footer = (props) => {
     <>
       <ImageGallery customCss={CustomImageStyles} images={galleryImages} />
       <StyledFooter>
-        <Svg
-          src={logoImg}
-          preProcessor={setColorSVG(CssVariables.ColorGreen)}
-        />
+        <Icon id={"logo"} color={CssVariables.ColorGreen} width={"124"} />
         <NavLinks footer customCss={CustomNavLinksStyles} />
         <NavIcons />
       </StyledFooter>
