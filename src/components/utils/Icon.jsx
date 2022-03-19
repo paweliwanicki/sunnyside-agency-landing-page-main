@@ -13,16 +13,17 @@ const Icon = (props) => {
   };
 
   // set default values
-  const height = props.height ? props.height : "24";
-  const width = props.width ? props.width : "24";
+  const height = props.height ? props.height : "20";
+  const width = props.width ? props.width : "20";
   return (
     <svg
       width={width}
       height={height}
-      viewBox={`0 0 ${width} ${height}`}
+      viewBox={props.viewBox  ? props.viewBox : `0 0 ${width} ${height}`}
       fill={color}
       onMouseEnter={onMouseEnterHandler}
       onMouseLeave={onMouseLeaveHandler}
+      data-id={props.id}
     >
       <use href={Icons + `#${props.id}`} />
     </svg>

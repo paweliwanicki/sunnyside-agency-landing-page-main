@@ -7,6 +7,7 @@ import CssVariables from "../../utils/CssVariables";
 const StyledNavLink = styled.div`
   width: max-content;
   font-size: 1.125em;
+  line-height: 25px;
   font-weight: ${CssVariables.FontWeight600};
   color: inherit;
 

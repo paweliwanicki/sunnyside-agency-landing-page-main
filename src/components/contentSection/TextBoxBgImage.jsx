@@ -9,14 +9,14 @@ const TextBoxBgImageDiv = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 24.875em;
+  padding-top: 398px;
   display: flex;
   flex-flow: column;
   text-align: center;
   justify-content: flex-start;
   align-items: center;
   color: ${(props) => (props.color ? props.color : CssVariables.ColorDark)};
-  padding-bottom: 2em;
+  padding-bottom: 60px;
   grid-column: ${(props) =>
     props.desktopGridColumn ? props.desktopGridColumn : ""};
   grid-row: ${(props) => (props.desktopGridRow ? props.desktopGridRow : "")};
@@ -37,7 +37,7 @@ const Header = styled.h2`
   margin-top: 0;
   font-size: 1.75em;
   margin-bottom: 1em;
-  line-height: 2.1575em;
+  line-height: 34px;
 `;
 
 const Paragraph = styled.p`

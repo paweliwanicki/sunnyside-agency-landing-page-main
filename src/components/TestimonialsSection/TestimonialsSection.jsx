@@ -41,8 +41,8 @@ const SectionHeader = styled.h4`
   font-family: ${CssVariables.FontFamilyFraunces};
   color: ${CssVariables.colorGrayLight};
   font-size: 1.5em;
-  margin-bottom: 5.0625em;
-  letter-spacing: 0.21em;
+  margin-bottom: 80px;
+  letter-spacing: 5px;
   align-self: center;
   text-align: center;
 `;

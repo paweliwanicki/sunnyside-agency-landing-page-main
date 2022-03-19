@@ -15,7 +15,7 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4.5em 2.4375em;
+  padding: 72px 39px;
   flex-flow: column;
 
   ${mediaQueries.tabletS`
@@ -38,7 +38,7 @@ const Footer = (props) => {
     <>
       <ImageGallery customCss={CustomImageStyles} images={galleryImages} />
       <StyledFooter>
-        <Icon id={"logo"} color={CssVariables.ColorGreen} width={"124"} />
+        <Icon id={"logo"} color={CssVariables.ColorGreen} width={"170"} height={"33"} viewBox={`0 0 124 24`}/>
         <NavLinks footer customCss={CustomNavLinksStyles} />
         <NavIcons />
       </StyledFooter>

@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import CustomImage from "../utils/CustomImage";
 import CssVariables from "../../utils/CssVariables";
 import { mediaQueries } from "../../utils/Mixins";
-import propTypes from 'prop-types';
+import propTypes from "prop-types";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -11,8 +11,8 @@ const StyledDiv = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 0.9375em;
-  min-width: 15em;
+  padding: 0 15px;
+  min-width: 240px;
 
   ${mediaQueries.laptopS`
     margin-bottom: 4em;
@@ -22,10 +22,10 @@ const StyledDiv = styled.div`
 const Paragraph = styled.p`
   color: ${CssVariables.ColorGrayDark};
   text-align: inherit;
-  margin-bottom: 4.3125em;
+  margin-bottom: 69px;
   font-weight: ${CssVariables.FontWeight600};
-  line-height: 1.778em;
-  max-width: 19.45em;
+  line-height: 32px;
+  max-width: 340px;
   font-size: 1.125em;
 `;
 const UserInfo = styled.div`
@@ -42,7 +42,7 @@ const UserPosition = styled.p`
   color: ${CssVariables.colorGrayLight};
   font-size: 0.875em;
   font-weight: ${CssVariables.FontWeight600};
-  line-height: 1.785em;
+  line-height: 25px;
 `;
 
 const CustomImageStyles = css`
@@ -69,8 +69,8 @@ const TestimonialBox = (props) => {
 };
 
 TestimonialBox.propTypes = {
-  user : propTypes.object.isRequired,
-  text : propTypes.string.isRequired
+  user: propTypes.object.isRequired,
+  text: propTypes.string.isRequired,
 };
 
 export default TestimonialBox;

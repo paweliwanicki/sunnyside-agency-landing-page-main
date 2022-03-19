@@ -33,8 +33,10 @@ const Header = styled.h1`
     margin: 95px auto 0 auto;
   }
 
-  ${mediaQueries.tabletS`
+  ${mediaQueries.tabletM`
      margin-top:145px;
+     padding-left: 24px;
+     padding-right: 24px;
     `};
 
   ${mediaQueries.mobileL`
@@ -46,15 +48,15 @@ const NavigationContainer = (props) => {
   return (
     <NavigationContainerDiv>
       <Navbar />
-      <Header>WE ARE CREATIVES
-        <Icon id="icon-arrow-down" width="36" height="114" color={CssVariables.ColorWhite}/>
+      <Header>
+        WE ARE CREATIVES
+        <Icon
+          id="icon-arrow-down"
+          width="36"
+          height="114"
+          color={CssVariables.ColorWhite}
+        />
       </Header>
-      {/* <CustomImage
-        src={arrowDown}
-        alt={`arrow, navigate to site`}
-        display={`block`}
-        margin={`auto`}
-      /> */}
       {props.children}
     </NavigationContainerDiv>
   );

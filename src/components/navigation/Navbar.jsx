@@ -14,17 +14,22 @@ const StyledNav = styled.nav`
   color: ${CssVariables.ColorWhite};
   justify-content: space-between;
 
-  ${mediaQueries.tabletS`
+  ${mediaQueries.tabletM`
     margin:0;
-    padding: 32px 24px 32px 24px;
+    padding: 32px 24px;
     background-color: #3dbeff;
     position:fixed;
     width:100%;
+
+    svg[data-id="logo"] {
+      width:124px;
+      height:24px;
+    }
   `}
 `;
 
 const NavLinksCustomCss = css`
-  ${mediaQueries.tabletS`
+  ${mediaQueries.tabletM`
     display: none;
   `}
 `;
@@ -36,7 +41,7 @@ const NavDrawerToggler = styled.button`
   border: 0;
   padding: 0;
 
-  ${mediaQueries.tabletS`
+  ${mediaQueries.tabletM`
     display: block;
   `}
 `;
@@ -57,7 +62,13 @@ const Navbar = (props) => {
 
   return (
     <StyledNav>
-      <Icon id={"logo"} color={CssVariables.ColorWhite} width={"124"} />
+      <Icon
+        id={"logo"}
+        color={CssVariables.ColorWhite}
+        width={"170"}
+        height={"33"}
+        viewBox={`0 0 124 24`}
+      />
       <NavLinks customCss={NavLinksCustomCss}>
         <Button text={`CONTACT`} />
       </NavLinks>
@@ -66,6 +77,7 @@ const Navbar = (props) => {
           id={"icon-hamburger"}
           color={CssVariables.ColorWhite}
           height={"18"}
+          width={"24"}
         />
       </NavDrawerToggler>
       {navDrawerIsVisible && <NavDrawer open={navDrawerIsOpen} />}

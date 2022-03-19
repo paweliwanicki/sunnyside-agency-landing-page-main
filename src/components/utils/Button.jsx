@@ -9,8 +9,8 @@ const StyledButton = styled.button`
   font-family: ${CssVariables.FontFamilyFraunces};
   color: ${CssVariables.BtnPrimaryColor};
   border-radius: 28px;
-  padding: 1em 2em;
-  line-height: 1.56em;
+  padding: 15px 32px;
+  line-height: 25px;
   font-size: 0.9375em;
   font-weight: ${CssVariables.FontWeightBold};
   border: none;

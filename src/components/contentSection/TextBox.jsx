@@ -20,8 +20,8 @@ const TextBoxDiv = styled.div`
   font-family: ${CssVariables.FontFamilyBarlow};
   font-weight: ${CssVariables.FontWeight600};
   color: ${CssVariables.ColorGray};
-  line-height: 1.7em;
-  font-size: 1.1375em;
+  line-height: 30px;
+  font-size: 1.125em;
 
   ${mediaQueries.tabletS`
     grid-column: ${(props) =>
@@ -31,7 +31,7 @@ const TextBoxDiv = styled.div`
     padding-bottom: 4em;
     margin-left: 1.25em;
     margin-right: 1.25em;
-    text-align: center;
+    text-align: left;
   `};
 
   ${mediaQueries.laptopL`
@@ -61,7 +61,6 @@ const Header = styled.h2`
   margin-top: 0;
   margin-bottom: 0.7em;
   max-width: 9.8em;
-  text-align: left;
 
   ${mediaQueries.laptopL`
     font-size: 1.87em;

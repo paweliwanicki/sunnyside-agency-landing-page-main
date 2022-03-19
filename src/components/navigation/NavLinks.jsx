@@ -7,7 +7,7 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: ${(props) => (props.footer ? "18.5625em" : "30em")};
+  width: ${(props) => (props.footer ? "297px" : "470px")};
 
   ${(props) => props.customCss}
 
