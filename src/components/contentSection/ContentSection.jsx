@@ -1,4 +1,5 @@
 import React from "react";
+import { css } from "styled-components";
 import CustomImage from "../utils/CustomImage";
 import eggImg from "../../images/desktop/image-transform.jpg";
 import orangeImg from "../../images/desktop/image-photography.jpg";
@@ -7,6 +8,10 @@ import glassImg from "../../images/desktop/image-stand-out.jpg";
 import TextBox from "./TextBox";
 import TextBoxBgImage from "./TextBoxBgImage";
 import CssVariables from "../../utils/CssVariables";
+
+const customImageStyles = css`
+  width: 100%;
+`;
 
 const ContentSection = (props) => {
   return (
@@ -28,7 +33,7 @@ const ContentSection = (props) => {
         desktopGridRow={`2/3`}
         mobileGridRow={`4/5`}
         mobileGridColumn={`1/5`}
-        width={`100%`}
+        customCss={customImageStyles}
       />
       <CustomImage
         src={glassImg}
@@ -37,7 +42,7 @@ const ContentSection = (props) => {
         desktopGridRow={`3/4`}
         mobileGridRow={`5/6`}
         mobileGridColumn={`1/5`}
-        width={`100%`}
+        customCss={customImageStyles}
       />
       <TextBox
         desktopGridColumn={`3/5`}

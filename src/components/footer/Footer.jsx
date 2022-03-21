@@ -11,7 +11,7 @@ import Icon from "../utils/Icon";
 const StyledFooter = styled.footer`
   grid-column: 1/5;
   grid-row: 9/10;
-  background-color: #90d4c6;
+  background-color: ${CssVariables.ColorLightGreen};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,7 @@ const StyledFooter = styled.footer`
   `}
 `;
 
-const CustomImageStyles = css`
+const customImageStyles = css`
   max-width: 22.5em;
   width: 100%;
 `;
@@ -36,9 +36,15 @@ const CustomNavLinksStyles = css`
 const Footer = (props) => {
   return (
     <>
-      <ImageGallery customCss={CustomImageStyles} images={galleryImages} />
+      <ImageGallery customCss={customImageStyles} images={galleryImages} />
       <StyledFooter>
-        <Icon id={"logo"} color={CssVariables.ColorGreen} width={"170"} height={"33"} viewBox={`0 0 124 24`}/>
+        <Icon
+          id={"logo"}
+          color={CssVariables.ColorGreen}
+          width={170}
+          height={33}
+          viewBox={`0 0 124 24`}
+        />
         <NavLinks footer customCss={CustomNavLinksStyles} />
         <NavIcons />
       </StyledFooter>

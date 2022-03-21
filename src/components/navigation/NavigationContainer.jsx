@@ -20,13 +20,14 @@ const NavigationContainerDiv = styled.div`
 `;
 
 const Header = styled.h1`
-  margin-top: 1.9em;
+  margin-top: 106px;
   color: ${CssVariables.ColorWhite};
   font-size: 3.5em;
   text-align: center;
   font-family: ${CssVariables.FontFamilyFraunces};
   margin-bottom: 1.75em;
-  letter-spacing: 0.157em;
+  letter-spacing: 8.75px;
+  line-height: 69px;
 
   svg {
     display: block;
@@ -42,6 +43,11 @@ const Header = styled.h1`
   ${mediaQueries.mobileL`
    font-size: 2.75em;
   `};
+  ${mediaQueries.mobileM`
+   font-size: 2.25em;
+   letter-spacing: 5px;
+  `};
+  
 `;
 
 const NavigationContainer = (props) => {
@@ -52,8 +58,8 @@ const NavigationContainer = (props) => {
         WE ARE CREATIVES
         <Icon
           id="icon-arrow-down"
-          width="36"
-          height="114"
+          width={36}
+          height={114}
           color={CssVariables.ColorWhite}
         />
       </Header>

@@ -6,7 +6,7 @@ import CssVariables from "../../utils/CssVariables";
 
 const StyledNavLink = styled.div`
   width: max-content;
-  font-size: 1.125em;
+  font-size: 20px;
   line-height: 25px;
   font-weight: ${CssVariables.FontWeight600};
   color: inherit;
@@ -33,6 +33,7 @@ NavLink.propTypes = {
   text: propTypes.string.isRequired,
   link: propTypes.string.isRequired,
   navdrawer: propTypes.bool,
+  footer: propTypes.bool,
 };
 
 export default NavLink;

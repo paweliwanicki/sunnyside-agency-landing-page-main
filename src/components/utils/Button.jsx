@@ -41,6 +41,7 @@ Button.propTypes = {
   onClick: propTypes.func,
   disabled: propTypes.bool,
   bgColor: propTypes.string,
+  text: propTypes.string,
 };
 
 export default Button;

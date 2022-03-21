@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CssVariables from "../../utils/CssVariables";
 import { mediaQueries } from "../../utils/Mixins";
+import propTypes from 'prop-types';
 
 const TextBoxBgImageDiv = styled.div`
   background-image: ${(props) =>
@@ -62,5 +63,16 @@ const TextBoxBgImage = (props) => {
     </TextBoxBgImageDiv>
   );
 };
+
+TextBoxBgImage.propTypes = {
+  backgroundImg: propTypes.string,
+  desktopGridColumn: propTypes.string,
+  desktopGridRow: propTypes.string,
+  mobileGridRow: propTypes.string,
+  mobileGridColumn: propTypes.string,
+  color: propTypes.string,
+  headerText: propTypes.string,
+  text: propTypes.string,
+}
 
 export default TextBoxBgImage;

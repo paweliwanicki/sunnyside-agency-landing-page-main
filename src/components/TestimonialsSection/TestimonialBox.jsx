@@ -45,10 +45,12 @@ const UserPosition = styled.p`
   line-height: 25px;
 `;
 
-const CustomImageStyles = css`
+const customImageStyles = css`
   border-radius: 50%;
   max-width: 4.5em;
   margin-bottom: 3.625em;
+  width:initial;
+  height:auto;
 `;
 
 const TestimonialBox = (props) => {
@@ -57,7 +59,7 @@ const TestimonialBox = (props) => {
       <CustomImage
         src={props.user.photo}
         alt={props.user.fullname}
-        customCss={CustomImageStyles}
+        customCss={customImageStyles}
       />
       <Paragraph>{props.text}</Paragraph>
       <UserInfo>

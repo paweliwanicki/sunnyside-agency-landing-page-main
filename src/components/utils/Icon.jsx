@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import propTypes from 'prop-types';
 import Icons from "../../images/svg-sprite.svg";
 
 const Icon = (props) => {
@@ -13,8 +14,8 @@ const Icon = (props) => {
   };
 
   // set default values
-  const height = props.height ? props.height : "20";
-  const width = props.width ? props.width : "20";
+  const height = props.height ? props.height : 20;
+  const width = props.width ? props.width : 20;
   return (
     <svg
       width={width}
@@ -29,5 +30,13 @@ const Icon = (props) => {
     </svg>
   );
 };
+
+Icon.propTypes = {
+  id: propTypes.string.isRequired,
+  height: propTypes.number,
+  width: propTypes.number,
+  color: propTypes.string,
+  viewBox : propTypes.string
+}
 
 export default Icon;

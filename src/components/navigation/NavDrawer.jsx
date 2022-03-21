@@ -5,7 +5,7 @@ import Button from "../utils/Button";
 import { mediaQueries } from "../../utils/Mixins";
 import { fadeInDown, fadeOutUp } from "react-animations";
 import CssVariables from "../../utils/CssVariables";
-
+import propTypes from "prop-types";
 
 // simple animation
 const fadeInDownAnimation = keyframes`${fadeInDown}`;
@@ -14,11 +14,11 @@ const fadeOutUpAnimation = keyframes`${fadeOutUp}`;
 const NavDrawerDiv = styled.div`
   background-color: ${CssVariables.ColorWhite};
   width: 330px;
-  height: 330px;
+  height: 305px;
   position: fixed;
   top: 106px;
   right: 24px;
-  padding: 2.45em;
+  padding: 39px;
   box-sizing: border-box;
   color: ${CssVariables.ColorGray};
   animation: 1s
@@ -26,7 +26,7 @@ const NavDrawerDiv = styled.div`
   font-size: 1.1em;
 
   ${mediaQueries.mobileL`
-     margin: 0 24px;
+    margin: 0 24px;
     width: calc(100% - 48px);
     right:0;
   `};
@@ -66,5 +66,8 @@ const NavDrawer = (props) => {
   );
 };
 
+NavDrawer.propTypes = {
+  open: propTypes.bool
+}
 
 export default NavDrawer;

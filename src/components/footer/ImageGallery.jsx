@@ -1,5 +1,6 @@
 import React from "react";
 import CustomImage from "../utils/CustomImage";
+import propTypes from 'prop-types';
 
 const ImageGallery = (props) => {
   return Object.keys(props.images).map((key) => {
@@ -19,5 +20,11 @@ const ImageGallery = (props) => {
     );
   });
 };
+
+ImageGallery.propTypes = {
+ images: propTypes.object,
+ customCss: propTypes.array
+}
+
 
 export default ImageGallery;

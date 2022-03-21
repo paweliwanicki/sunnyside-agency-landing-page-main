@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CssVariables from "../../utils/CssVariables";
 import { mediaQueries } from "../../utils/Mixins";
+import propTypes from 'prop-types';
 
 const TextBoxDiv = styled.div`
   grid-column: ${(props) =>
@@ -103,5 +104,15 @@ const TextBox = (props) => {
     </TextBoxDiv>
   );
 };
+
+TextBox.propTypes = {
+  desktopGridColumn: propTypes.string,
+  desktopGridRow: propTypes.string,
+  mobileGridRow: propTypes.string,
+  mobileGridColumn: propTypes.string,
+  headerText: propTypes.string,
+  text: propTypes.string,
+  children: propTypes.node,
+}
 
 export default TextBox;

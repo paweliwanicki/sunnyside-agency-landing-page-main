@@ -65,8 +65,8 @@ const Navbar = (props) => {
       <Icon
         id={"logo"}
         color={CssVariables.ColorWhite}
-        width={"170"}
-        height={"33"}
+        width={170}
+        height={33}
         viewBox={`0 0 124 24`}
       />
       <NavLinks customCss={NavLinksCustomCss}>
@@ -76,8 +76,8 @@ const Navbar = (props) => {
         <Icon
           id={"icon-hamburger"}
           color={CssVariables.ColorWhite}
-          height={"18"}
-          width={"24"}
+          height={18}
+          width={24}
         />
       </NavDrawerToggler>
       {navDrawerIsVisible && <NavDrawer open={navDrawerIsOpen} />}

@@ -4,10 +4,6 @@ import propTypes from "prop-types";
 import { mediaQueries } from "../../utils/Mixins";
 
 const StyledImg = styled.img`
-  width: ${(props) => (props.width ? props.width : "initial")};
-  height: ${(props) => (props.height ? props.height : "auto")};
-  display: ${(props) => props.display};
-  margin: ${(props) => props.margin};
   grid-column: ${(props) =>
     props.desktopGridColumn ? props.desktopGridColumn : ""};
   grid-row: ${(props) => (props.desktopGridRow ? props.desktopGridRow : "")};
@@ -26,10 +22,6 @@ const CustomImage = (props) => {
     <StyledImg
       src={props.src}
       alt={props.alt}
-      height={props.height}
-      width={props.width}
-      display={props.display}
-      margin={props.margin}
       desktopGridColumn={props.desktopGridColumn}
       desktopGridRow={props.desktopGridRow}
       mobileGridRow={props.mobileGridRow}
@@ -42,7 +34,11 @@ const CustomImage = (props) => {
 CustomImage.propTypes = {
   src: propTypes.string.isRequired,
   alt: propTypes.string.isRequired,
-  className: propTypes.string,
+  desktopGridColumn: propTypes.string,
+  desktopGridRow: propTypes.string,
+  mobileGridRow: propTypes.string,
+  mobileGridColumn: propTypes.string,
+  customCss: propTypes.array,
 };
 
 export default CustomImage;
