@@ -17,9 +17,10 @@ const StyledNav = styled.nav`
   ${mediaQueries.tabletM`
     margin:0;
     padding: 32px 24px;
-    background-color: #3dbeff;
+    background-color: ${CssVariables.ColorBlue};
     position:fixed;
     width:100%;
+    z-index:2;
 
     svg[data-id="logo"] {
       width:124px;

@@ -7,7 +7,6 @@ import { fadeInDown, fadeOutUp } from "react-animations";
 import CssVariables from "../../utils/CssVariables";
 import propTypes from "prop-types";
 
-// simple animation
 const fadeInDownAnimation = keyframes`${fadeInDown}`;
 const fadeOutUpAnimation = keyframes`${fadeOutUp}`;
 

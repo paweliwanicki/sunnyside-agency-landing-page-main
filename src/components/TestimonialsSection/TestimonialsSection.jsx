@@ -14,25 +14,27 @@ const StyledSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10em 10.3125em;
+  padding: 160px 165px;
   flex-flow: column;
 
   ${mediaQueries.laptopL`
-    padding-left:3em;
-    padding-right:3em;
+    padding-left:48px;
+    padding-right:48px;
   `}
 
   ${mediaQueries.laptopM`
-    padding-left:1em;
-    padding-right:1em;
+    padding-left:24px;
+    padding-right:24px;
     font-size:.9em;
   `}
   ${mediaQueries.laptopS`
     font-size:initial;
   `}
 
-${mediaQueries.tabletS`
-   grid-row: 9/10;
+  ${mediaQueries.tabletS`
+    padding-top:64px;
+    padding-bottom:86px;
+    grid-row: 9/10;
   `}
 `;
 
@@ -45,12 +47,21 @@ const SectionHeader = styled.h4`
   letter-spacing: 5px;
   align-self: center;
   text-align: center;
+
+  ${mediaQueries.laptopS`
+    margin-bottom:64px;
+  `};
+
+  ${mediaQueries.mobileL`
+   font-size:16px;
+  `}
 `;
 
 const TestimonialsBox = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
 
   ${mediaQueries.laptopS`
     flex-flow: column;

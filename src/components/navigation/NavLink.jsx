@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import propTypes from "prop-types";
 import CssVariables from "../../utils/CssVariables";
+import { mediaQueries } from "../../utils/Mixins";
 
 const StyledNavLink = styled.div`
   width: max-content;
@@ -19,6 +20,10 @@ const StyledNavLink = styled.div`
       color: ${(props) => (props.footer ? CssVariables.ColorWhite : "inherit")};
     }
   }
+
+  ${mediaQueries.mobileL`
+    font-size: ${(props) => (props.footer ? "18px" : "20px")};
+  `};
 `;
 
 const NavLink = (props) => {

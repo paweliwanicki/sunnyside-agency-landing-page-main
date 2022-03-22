@@ -47,7 +47,6 @@ const Header = styled.h1`
    font-size: 2.25em;
    letter-spacing: 5px;
   `};
-  
 `;
 
 const NavigationContainer = (props) => {

@@ -20,6 +20,7 @@ const StyledFooter = styled.footer`
 
   ${mediaQueries.tabletS`
     grid-row: 12/13;
+    padding: 64px 39px 80px 39px;
   `}
 `;
 

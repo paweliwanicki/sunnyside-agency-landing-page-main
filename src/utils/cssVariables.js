@@ -7,12 +7,14 @@ const CssVariables = {
   ColorGrayDark: "#5B636D",
   ColorYellow: "#FBD600",
   Transparent: "Transparent",
-  ColorDark: '#24303e',
-  ColorDarkBlue: '#24303e',
-  ColorLightGreen: '#90D4C6',
-  ColorGreen: '#2C7566',
-  ColorDarkGreen: '#24554A',
-  
+  ColorDark: "#24303e",
+  ColorLightGreen: "#90D4C6",
+  ColorGreen: "#2C7566",
+  ColorDarkGreen: "#24554A",
+  ColorLightYellow: "#FAD400",
+  ColorOrange: "#FE7766",
+  ColorBlue: "#3dbeff",
+
   // fonts
   FontFamilyBarlow: `'Barlow', sans-serif`,
   FontFamilyFraunces: `'Fraunces', serif`,
@@ -26,8 +28,6 @@ const CssVariables = {
   BtnPrimaryHoverBgColor: "#78cdf5",
   BtnPrimaryColor: `#24303e`,
   BtnPrimaryHoverColor: "#fff",
-
-
 };
 
 export default CssVariables;

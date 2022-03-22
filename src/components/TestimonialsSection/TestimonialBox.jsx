@@ -11,11 +11,15 @@ const StyledDiv = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 15px;
+  padding: 0 5px;
   min-width: 240px;
 
   ${mediaQueries.laptopS`
-    margin-bottom: 4em;
+    margin-bottom: 64px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   `}
 `;
 
@@ -26,7 +30,12 @@ const Paragraph = styled.p`
   font-weight: ${CssVariables.FontWeight600};
   line-height: 32px;
   max-width: 340px;
-  font-size: 1.125em;
+  font-size: 18px;
+  letter-spacing: -0.13px;
+
+  ${mediaQueries.laptopS`
+    margin-bottom:32px;
+  `};
 `;
 const UserInfo = styled.div`
   text-align: center;
@@ -35,22 +44,27 @@ const UserInfo = styled.div`
 const UserFullname = styled.p`
   font-weight: ${CssVariables.FontWeight900};
   font-family: ${CssVariables.FontFamilyFraunces};
-  margin-bottom: 0.5em;
+  margin-bottom: 9px;
+  font-size: 18px;
+  line-height: 22px;
 `;
 
 const UserPosition = styled.p`
   color: ${CssVariables.colorGrayLight};
-  font-size: 0.875em;
+  font-size: 14px;
   font-weight: ${CssVariables.FontWeight600};
   line-height: 25px;
 `;
 
 const customImageStyles = css`
   border-radius: 50%;
-  max-width: 4.5em;
-  margin-bottom: 3.625em;
-  width:initial;
-  height:auto;
+  max-width: 72px;
+  margin-bottom: 58px;
+  width: initial;
+  height: auto;
+  ${mediaQueries.laptopS`
+    margin-bottom:32px;
+  `};
 `;
 
 const TestimonialBox = (props) => {

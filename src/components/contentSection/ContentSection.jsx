@@ -25,6 +25,7 @@ const ContentSection = (props) => {
         text={` We are a full-service creative agency specializing in helping brands
           grow fast. Engage your clients through compelling visuals that do most
           of the marketing for you.`}
+        linkBorderColor={CssVariables.ColorLightYellow}
       />
       <CustomImage
         src={eggImg}
@@ -53,6 +54,7 @@ const ContentSection = (props) => {
         text={`Using a collaborative formula of designers, researchers,
           photographers, videographers, and copywriters, we’ll build and extend
           your brand in digital places.`}
+        linkBorderColor={CssVariables.ColorOrange}
       />
       <TextBoxBgImage
         backgroundImg={cherryImg}
