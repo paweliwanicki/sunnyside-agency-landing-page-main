@@ -1,19 +1,11 @@
 module.exports = {
+    pathPrefix: "/sunnyside-agency-landing-page/",
     siteMetadata: {
       title: ``,
         siteUrl: `https://www.yourdomain.tld`,
     },
     plugins: [
       `gatsby-plugin-styled-components`,
-      // {
-      //   resolve: `gatsby-plugin-svg-sprite-loader`,
-      //   options: {
-      //     /* External SVG Sprite loader options */
-      //     pluginOptions: {
-      //       /* External SVG Sprite plugin options */
-      //     }
-      //   },
-      // },
       {
         resolve: `gatsby-plugin-google-fonts`,
         options: {
@@ -36,5 +28,6 @@ module.exports = {
         },
       },
       `gatsby-plugin-react-helmet`,
+     
     ]
 }
