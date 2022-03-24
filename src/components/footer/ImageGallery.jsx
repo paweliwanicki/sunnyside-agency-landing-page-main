@@ -1,11 +1,11 @@
 import React from "react";
 import CustomImage from "../utils/CustomImage";
 import propTypes from 'prop-types';
+import {Images} from '../../utils/Images';
 
 const ImageGallery = (props) => {
-  return Object.keys(props.images).map((key) => {
-    const image = props.images[key];
-    
+  return Object.keys(Images.gallery).map((key) => {
+    const image = Images.gallery[key];
     return (
       <CustomImage
         key={key}

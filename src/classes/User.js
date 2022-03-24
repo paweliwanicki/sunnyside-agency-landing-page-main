@@ -1,8 +1,9 @@
 class User {
-  constructor(fullname, position, photo) {
+  constructor(fullname, position, photo, testimonial) {
     this.fullname = fullname;
     this.position = position;
     this.photo = photo;
+    this.testimonial = testimonial;
   }
 
   getFullname() {

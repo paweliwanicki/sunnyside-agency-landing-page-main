@@ -6,6 +6,7 @@ import propTypes from "prop-types";
 import CssVariables from "../../utils/CssVariables";
 import { mediaQueries } from "../../utils/Mixins";
 import Icon from "../utils/Icon";
+import {Icons} from '../../utils/Icons';
 
 const NavigationContainerDiv = styled.div`
   max-height: 800px;
@@ -41,7 +42,8 @@ const Header = styled.h1`
     `};
 
   ${mediaQueries.mobileL`
-   font-size: 2.75em;
+   font-size: 2.5em;
+   letter-spacing: 6.25px;
   `};
   ${mediaQueries.mobileM`
    font-size: 2.25em;
@@ -56,7 +58,7 @@ const NavigationContainer = (props) => {
       <Header>
         WE ARE CREATIVES
         <Icon
-          id="icon-arrow-down"
+          id={Icons.arrowDown.id}
           width={36}
           height={114}
           color={CssVariables.ColorWhite}

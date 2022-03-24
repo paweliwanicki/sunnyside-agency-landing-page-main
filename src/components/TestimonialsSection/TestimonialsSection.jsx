@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import TestimonialBox from "./TestimonialBox";
-import userEmilyImg from "../../images/image-emily.jpg";
-import userJennyImg from "../../images/image-jennie.jpg";
-import userThomasImg from "../../images/image-thomas.jpg";
 import User from "../../classes/User";
 import CssVariables from "../../utils/CssVariables";
 import { mediaQueries } from "../../utils/Mixins";
+import { Images } from "../../utils/Images";
 
 const StyledSection = styled.section`
   grid-column: 1/5;
@@ -18,8 +16,8 @@ const StyledSection = styled.section`
   flex-flow: column;
 
   ${mediaQueries.laptopL`
-    padding-left:48px;
-    padding-right:48px;
+    padding-left:64px;
+    padding-right:64px;
   `}
 
   ${mediaQueries.laptopM`
@@ -70,26 +68,37 @@ const TestimonialsBox = styled.div`
 `;
 
 const TestimonialsSection = (props) => {
-  const Emily = new User(`Emily R.`, `Marketing Director`, userEmilyImg);
-  const Thomas = new User(`Thomas S.`, `Chief Operating Officer`, userJennyImg);
-  const Jennie = new User(`Jennie F.`, `Business Owner`, userThomasImg);
+  const usersObj = {};
+  const Emily = new User(
+    `Emily R.`,
+    `Marketing Director`,
+    Images.emily,
+    `We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.`
+  );
+  const Thomas = new User(
+    `Thomas S.`,
+    `Chief Operating Officer`,
+    Images.jenny,
+    `Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.`
+  );
+  const Jennie = new User(
+    `Jennie F.`,
+    `Business Owner`,
+    Images.thomas,
+    `Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!`
+  );
+  usersObj.emily = Emily;
+  usersObj.thomas = Thomas;
+  usersObj.jennie = Jennie;
 
   return (
     <StyledSection>
       <SectionHeader>CLIENT TESTIMONIALS</SectionHeader>
       <TestimonialsBox>
-        <TestimonialBox
-          text={`We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.`}
-          user={Emily}
-        />
-        <TestimonialBox
-          text={`Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.`}
-          user={Thomas}
-        />
-        <TestimonialBox
-          text={`Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!`}
-          user={Jennie}
-        />
+        {Object.keys(usersObj).map((name) => {
+          const user = usersObj[name];
+          return <TestimonialBox user={user} key={`user_${name}`} />;
+        })}
       </TestimonialsBox>
     </StyledSection>
   );

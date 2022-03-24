@@ -1,8 +1,8 @@
 module.exports = {
-    pathPrefix: "/sunnyside-agency-landing-page/",
+    pathPrefix: "/sunnyside-agency-landing-page-main",
     siteMetadata: {
-      title: ``,
-        siteUrl: `https://www.yourdomain.tld`,
+      title: `sunnyside-agency-landing-page`,
+        siteUrl: `https://paweliwanicki.github.io/sunnyside-agency-landing-page-main/`,
     },
     plugins: [
       `gatsby-plugin-styled-components`,

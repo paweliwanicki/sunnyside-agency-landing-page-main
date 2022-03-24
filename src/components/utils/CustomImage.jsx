@@ -18,26 +18,22 @@ const StyledImg = styled.img`
 `;
 
 const CustomImage = (props) => {
+  const ImageObj = props;
   return (
     <StyledImg
-      src={props.src}
-      alt={props.alt}
-      desktopGridColumn={props.desktopGridColumn}
-      desktopGridRow={props.desktopGridRow}
-      mobileGridRow={props.mobileGridRow}
-      mobileGridColumn={props.mobileGridColumn}
+      src={ImageObj.src}
+      alt={ImageObj.alt}
+      desktopGridColumn={ImageObj.desktopGridColumn}
+      desktopGridRow={ImageObj.desktopGridRow}
+      mobileGridRow={ImageObj.mobileGridRow}
+      mobileGridColumn={ImageObj.mobileGridColumn}
       customCss={props.customCss}
     />
   );
 };
 
 CustomImage.propTypes = {
-  src: propTypes.string.isRequired,
-  alt: propTypes.string.isRequired,
-  desktopGridColumn: propTypes.string,
-  desktopGridRow: propTypes.string,
-  mobileGridRow: propTypes.string,
-  mobileGridColumn: propTypes.string,
+  image: propTypes.object,
   customCss: propTypes.array,
 };
 

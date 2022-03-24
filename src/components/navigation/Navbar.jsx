@@ -6,6 +6,7 @@ import { mediaQueries } from "../../utils/Mixins";
 import CssVariables from "../../utils/CssVariables";
 import NavLinks from "./NavLinks";
 import Icon from "../utils/Icon";
+import { Icons } from "../../utils/Icons";
 
 const StyledNav = styled.nav`
   display: flex;
@@ -64,7 +65,7 @@ const Navbar = (props) => {
   return (
     <StyledNav>
       <Icon
-        id={"logo"}
+        id={Icons.logo.id}
         color={CssVariables.ColorWhite}
         width={170}
         height={33}
@@ -75,7 +76,7 @@ const Navbar = (props) => {
       </NavLinks>
       <NavDrawerToggler onClick={navDrawerTogglerHandler}>
         <Icon
-          id={"icon-hamburger"}
+          id={Icons.hamburger.id}
           color={CssVariables.ColorWhite}
           height={18}
           width={24}

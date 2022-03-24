@@ -1,13 +1,10 @@
 import React from "react";
 import { css } from "styled-components";
 import CustomImage from "../utils/CustomImage";
-import eggImg from "../../images/desktop/image-transform.jpg";
-import orangeImg from "../../images/desktop/image-photography.jpg";
-import cherryImg from "../../images/desktop/image-graphic-design.jpg";
-import glassImg from "../../images/desktop/image-stand-out.jpg";
 import TextBox from "./TextBox";
 import TextBoxBgImage from "./TextBoxBgImage";
 import CssVariables from "../../utils/CssVariables";
+import { Images } from "../../utils/Images";
 
 const customImageStyles = css`
   width: 100%;
@@ -27,24 +24,8 @@ const ContentSection = (props) => {
           of the marketing for you.`}
         linkBorderColor={CssVariables.ColorLightYellow}
       />
-      <CustomImage
-        src={eggImg}
-        alt={`egg`}
-        desktopGridColumn={`3/5`}
-        desktopGridRow={`2/3`}
-        mobileGridRow={`4/5`}
-        mobileGridColumn={`1/5`}
-        customCss={customImageStyles}
-      />
-      <CustomImage
-        src={glassImg}
-        alt={`glass`}
-        desktopGridColumn={`1/3`}
-        desktopGridRow={`3/4`}
-        mobileGridRow={`5/6`}
-        mobileGridColumn={`1/5`}
-        customCss={customImageStyles}
-      />
+      <CustomImage image={Images.eggImg} customCss={customImageStyles} />
+      <CustomImage image={Images.glassImg} customCss={customImageStyles} />
       <TextBox
         desktopGridColumn={`3/5`}
         desktopGridRow={`3/4`}
@@ -57,7 +38,7 @@ const ContentSection = (props) => {
         linkBorderColor={CssVariables.ColorOrange}
       />
       <TextBoxBgImage
-        backgroundImg={cherryImg}
+        backgroundImg={Images.cherry}
         desktopGridColumn={`1/3`}
         desktopGridRow={`4/5`}
         mobileGridRow={`7/8`}
@@ -68,7 +49,7 @@ const ContentSection = (props) => {
           your brand message and captures potential clients’ attention.`}
       ></TextBoxBgImage>
       <TextBoxBgImage
-        backgroundImg={orangeImg}
+        backgroundImg={Images.tangerine}
         desktopGridColumn={`3/5`}
         desktopGridRow={`4/5`}
         mobileGridRow={`8/9`}

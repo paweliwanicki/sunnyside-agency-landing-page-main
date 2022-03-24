@@ -34,7 +34,6 @@ const TextBoxBgImageDiv = styled.div`
 const Header = styled.h2`
   font-family: ${CssVariables.FontFamilyFraunces};
   font-weight: ${CssVariables.FontWeight900};
-  /* max-width: 21.25em; */
   margin-top: 0;
   font-size: 1.75em;
   margin-bottom: 1em;
@@ -47,7 +46,6 @@ const Paragraph = styled.p`
   font-size: 16px;
   line-height: 27px;
   letter-spacing: -0.11px;
-  /* max-width: 21.25em; */
   font-weight: ${CssVariables.FontWeight600};
 `;
 

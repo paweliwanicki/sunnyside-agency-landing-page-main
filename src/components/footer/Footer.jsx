@@ -5,8 +5,8 @@ import CssVariables from "../../utils/CssVariables";
 import NavLinks from "../navigation/NavLinks";
 import NavIcons from "./NavIcons";
 import ImageGallery from "./ImageGallery";
-import { galleryImages } from "./Images";
 import Icon from "../utils/Icon";
+import { Icons } from "../../utils/Icons";
 
 const StyledFooter = styled.footer`
   grid-column: 1/5;
@@ -25,22 +25,22 @@ const StyledFooter = styled.footer`
 `;
 
 const customImageStyles = css`
-  max-width: 22.5em;
+  max-width: 360px;
   width: 100%;
 `;
 
 const CustomNavLinksStyles = css`
-  margin-top: 2.5em;
-  margin-bottom: 5.5em;
+  margin-top: 40px;
+  margin-bottom: 88px;
 `;
 
 const Footer = (props) => {
   return (
     <>
-      <ImageGallery customCss={customImageStyles} images={galleryImages} />
+      <ImageGallery customCss={customImageStyles} />
       <StyledFooter>
         <Icon
-          id={"logo"}
+          id={Icons.logo.id}
           color={CssVariables.ColorGreen}
           width={170}
           height={33}

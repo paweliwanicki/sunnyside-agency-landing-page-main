@@ -36,6 +36,14 @@ const Paragraph = styled.p`
   ${mediaQueries.laptopS`
     margin-bottom:32px;
   `};
+
+  ${mediaQueries.laptopM`
+    font-size:1em;
+    `}
+
+  ${mediaQueries.laptopS`
+    font-size:18px;
+    `}
 `;
 const UserInfo = styled.div`
   text-align: center;
@@ -71,11 +79,11 @@ const TestimonialBox = (props) => {
   return (
     <StyledDiv>
       <CustomImage
-        src={props.user.photo}
+        src={props.user.photo.src}
         alt={props.user.fullname}
         customCss={customImageStyles}
       />
-      <Paragraph>{props.text}</Paragraph>
+      <Paragraph>{props.user.testimonial}</Paragraph>
       <UserInfo>
         <UserFullname>{props.user.fullname}</UserFullname>
         <UserPosition>{props.user.position}</UserPosition>
@@ -86,7 +94,6 @@ const TestimonialBox = (props) => {
 
 TestimonialBox.propTypes = {
   user: propTypes.object.isRequired,
-  text: propTypes.string.isRequired,
 };
 
 export default TestimonialBox;

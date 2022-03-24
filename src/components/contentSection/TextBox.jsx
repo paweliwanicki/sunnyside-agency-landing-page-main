@@ -52,7 +52,8 @@ const Header = styled.h2`
   width: 100%;
 
   ${mediaQueries.laptopL`
-    font-size: 1.87em;
+    font-size: 25px;
+    line-height:30px;
   `};
 `;
 

@@ -1,7 +1,9 @@
+import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import CssVariables from "../../utils/CssVariables";
 import Icon from "../utils/Icon";
+import {Icons} from "../../utils/Icons";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -15,23 +17,20 @@ const StyledDiv = styled.div`
   }
 `;
 
-const iconsID = [
-  "icon-facebook",
-  "icon-instagram",
-  "icon-twitter",
-  "icon-pinterest",
-];
-
 const NavIcons = (props) => {
   return (
     <StyledDiv>
-      {iconsID.map((id) => {
-        return <Icon
-          id={id}
-          key={id}
-          color={CssVariables.ColorGreen}
-          hoverColor={CssVariables.ColorWhite}
-        />;
+      {Object.keys(Icons.footer).map((key) => {
+        const IconObj = Icons.footer[key];
+        return (
+          <Link to={`#${IconObj.url}`} key={IconObj.id}>
+            <Icon
+              id={IconObj.id}
+              color={CssVariables.ColorGreen}
+              hoverColor={CssVariables.ColorWhite}
+            />
+          </Link>
+        );
       })}
     </StyledDiv>
   );

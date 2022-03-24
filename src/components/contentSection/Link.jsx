@@ -26,7 +26,7 @@ const StyledLink = styled.a`
     right: 0%;
     top: 60%;
     bottom: 0%;
-    background: ${props => props.borderColor };
+    background: ${(props) => props.borderColor};
     mix-blend-mode: normal;
     opacity: 0.25;
     border-radius: 28px;
@@ -34,12 +34,17 @@ const StyledLink = styled.a`
 `;
 
 const Link = (props) => {
-  return <StyledLink href={props.href} borderColor={props.borderColor}>{props.text}</StyledLink>;
+  return (
+    <StyledLink href={props.href} borderColor={props.borderColor}>
+      {props.text}
+    </StyledLink>
+  );
 };
 
 Link.propTypes = {
   href: propTypes.string.isRequired,
   text: propTypes.string.isRequired,
+  borderColor: propTypes.string,
 };
 
 export default Link;
