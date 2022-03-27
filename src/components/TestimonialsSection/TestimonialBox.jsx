@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import CustomImage from "../utils/CustomImage";
 import CssVariables from "../../utils/CssVariables";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 import propTypes from "prop-types";
 
 const StyledDiv = styled.div`
@@ -34,15 +34,15 @@ const Paragraph = styled.p`
   letter-spacing: -0.13px;
 
   ${mediaQueries.laptopS`
-    margin-bottom:32px;
+    margin-bottom: 32px;
   `};
 
   ${mediaQueries.laptopM`
-    font-size:1em;
+    font-size: 1em;
     `}
 
   ${mediaQueries.laptopS`
-    font-size:18px;
+    font-size: 18px;
     `}
 `;
 const UserInfo = styled.div`
@@ -71,18 +71,14 @@ const customImageStyles = css`
   width: initial;
   height: auto;
   ${mediaQueries.laptopS`
-    margin-bottom:32px;
+    margin-bottom: 32px;
   `};
 `;
 
 const TestimonialBox = (props) => {
   return (
     <StyledDiv>
-      <CustomImage
-        src={props.user.photo.src}
-        alt={props.user.fullname}
-        customCss={customImageStyles}
-      />
+      <CustomImage image={props.user.photo} customCss={customImageStyles} />
       <Paragraph>{props.user.testimonial}</Paragraph>
       <UserInfo>
         <UserFullname>{props.user.fullname}</UserFullname>

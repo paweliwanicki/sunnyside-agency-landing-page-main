@@ -47,4 +47,8 @@ Link.propTypes = {
   borderColor: propTypes.string,
 };
 
+Link.defaultProps = {
+  borderColor: '',
+};
+
 export default Link;

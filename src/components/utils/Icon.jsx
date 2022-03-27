@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import propTypes from 'prop-types';
+import propTypes from "prop-types";
 import Icons from "../../images/svg-sprite.svg";
 
 const Icon = (props) => {
@@ -13,14 +13,13 @@ const Icon = (props) => {
     setColor(props.color);
   };
 
-  // set default values
-  const height = props.height ? props.height : 20;
-  const width = props.width ? props.width : 20;
   return (
     <svg
-      width={width}
-      height={height}
-      viewBox={props.viewBox  ? props.viewBox : `0 0 ${width} ${height}`}
+      width={props.width}
+      height={props.height}
+      viewBox={
+        props.viewBox ? props.viewBox : `0 0 ${props.width} ${props.height}`
+      }
       fill={color}
       onMouseEnter={onMouseEnterHandler}
       onMouseLeave={onMouseLeaveHandler}
@@ -36,7 +35,14 @@ Icon.propTypes = {
   height: propTypes.number,
   width: propTypes.number,
   color: propTypes.string,
-  viewBox : propTypes.string
-}
+  viewBox: propTypes.string,
+};
+
+Icon.defaultProps = {
+  height: 20,
+  width: 20,
+  color: "",
+  viewBox: "",
+};
 
 export default Icon;

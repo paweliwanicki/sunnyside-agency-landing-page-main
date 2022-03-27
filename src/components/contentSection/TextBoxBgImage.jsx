@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import CssVariables from "../../utils/CssVariables";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 import propTypes from "prop-types";
 
 const TextBoxBgImageDiv = styled.div`
   background-image: ${(props) =>
-    props.backgroundImg ? `url(${props.backgroundImg})` : ""};
+    props.backgroundImg ? `url(${props.backgroundImg.src})` : ""};
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -72,7 +72,7 @@ const TextBoxBgImage = (props) => {
 };
 
 TextBoxBgImage.propTypes = {
-  backgroundImg: propTypes.string,
+  backgroundImg: propTypes.object.isRequired,
   desktopGridColumn: propTypes.string,
   desktopGridRow: propTypes.string,
   mobileGridRow: propTypes.string,
@@ -81,5 +81,15 @@ TextBoxBgImage.propTypes = {
   headerText: propTypes.string,
   text: propTypes.string,
 };
+
+TextBoxBgImage.defaultProps = {
+  desktopGridColumn: '',
+  desktopGridRow: '',
+  mobileGridRow: '',
+  mobileGridColumn: '',
+  color: '',
+  headerText: '',
+  text: '',
+}
 
 export default TextBoxBgImage;

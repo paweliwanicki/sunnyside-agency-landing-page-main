@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import Button from "../utils/Button";
 import NavDrawer from "./NavDrawer";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 import CssVariables from "../../utils/CssVariables";
 import NavLinks from "./NavLinks";
 import Icon from "../utils/Icon";
@@ -16,16 +16,16 @@ const StyledNav = styled.nav`
   justify-content: space-between;
 
   ${mediaQueries.tabletM`
-    margin:0;
+    margin: 0;
     padding: 32px 24px;
     background-color: ${CssVariables.ColorBlue};
-    position:fixed;
-    width:100%;
-    z-index:2;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
 
     svg[data-id="logo"] {
-      width:124px;
-      height:24px;
+      width: 124px;
+      height: 24px;
     }
   `}
 `;

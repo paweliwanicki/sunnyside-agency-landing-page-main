@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import NavLink from "./NavLink";
 import Button from "../utils/Button";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 import { fadeInDown, fadeOutUp } from "react-animations";
 import CssVariables from "../../utils/CssVariables";
 import propTypes from "prop-types";
@@ -27,8 +27,8 @@ const NavDrawerDiv = styled.div`
   ${mediaQueries.mobileL`
     margin: 0 24px;
     width: calc(100% - 48px);
-    right:0;
-  `};
+    right: 0;
+  `}; 
 
   &:after {
     content: " ";
@@ -67,6 +67,10 @@ const NavDrawer = (props) => {
 
 NavDrawer.propTypes = {
   open: propTypes.bool
+}
+
+NavDrawer.defaultProps = {
+  open: false
 }
 
 export default NavDrawer;

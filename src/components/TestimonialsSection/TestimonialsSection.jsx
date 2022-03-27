@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import TestimonialBox from "./TestimonialBox";
-import User from "../../classes/User";
+import User from "../../models/User";
 import CssVariables from "../../utils/CssVariables";
-import { mediaQueries } from "../../utils/Mixins";
-import { Images } from "../../utils/Images";
+import { mediaQueries } from "../../utils/mixins";
+import { Images } from "../../utils/images";
 
 const StyledSection = styled.section`
   grid-column: 1/5;
@@ -16,22 +16,22 @@ const StyledSection = styled.section`
   flex-flow: column;
 
   ${mediaQueries.laptopL`
-    padding-left:64px;
-    padding-right:64px;
+    padding-left: 64px;
+    padding-right: 64px;
   `}
 
   ${mediaQueries.laptopM`
-    padding-left:24px;
-    padding-right:24px;
-    font-size:.9em;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: .9em;
   `}
   ${mediaQueries.laptopS`
-    font-size:initial;
+    font-size: initial;
   `}
 
   ${mediaQueries.tabletS`
-    padding-top:64px;
-    padding-bottom:86px;
+    padding-top: 64px;
+    padding-bottom: 86px;
     grid-row: 9/10;
   `}
 `;
@@ -47,11 +47,11 @@ const SectionHeader = styled.h4`
   text-align: center;
 
   ${mediaQueries.laptopS`
-    margin-bottom:64px;
+    margin-bottom: 64px;
   `};
 
   ${mediaQueries.mobileL`
-   font-size:16px;
+   font-size: 16px;
   `}
 `;
 
@@ -69,27 +69,27 @@ const TestimonialsBox = styled.div`
 
 const TestimonialsSection = (props) => {
   const usersObj = {};
-  const Emily = new User(
+  const emily = new User(
     `Emily R.`,
     `Marketing Director`,
     Images.emily,
     `We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.`
   );
-  const Thomas = new User(
+  const thomas = new User(
     `Thomas S.`,
     `Chief Operating Officer`,
     Images.jenny,
     `Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.`
   );
-  const Jennie = new User(
+  const jennie = new User(
     `Jennie F.`,
     `Business Owner`,
     Images.thomas,
     `Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!`
   );
-  usersObj.emily = Emily;
-  usersObj.thomas = Thomas;
-  usersObj.jennie = Jennie;
+  usersObj.emily = emily;
+  usersObj.thomas = thomas;
+  usersObj.jennie = jennie;
 
   return (
     <StyledSection>

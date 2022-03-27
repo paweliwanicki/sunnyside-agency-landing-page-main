@@ -4,7 +4,7 @@ import CustomImage from "../utils/CustomImage";
 import TextBox from "./TextBox";
 import TextBoxBgImage from "./TextBoxBgImage";
 import CssVariables from "../../utils/CssVariables";
-import { Images } from "../../utils/Images";
+import { Images } from "../../utils/images";
 
 const customImageStyles = css`
   width: 100%;
@@ -24,8 +24,8 @@ const ContentSection = (props) => {
           of the marketing for you.`}
         linkBorderColor={CssVariables.ColorLightYellow}
       />
-      <CustomImage image={Images.eggImg} customCss={customImageStyles} />
-      <CustomImage image={Images.glassImg} customCss={customImageStyles} />
+      <CustomImage image={Images.egg} customCss={customImageStyles} />
+      <CustomImage image={Images.glass} customCss={customImageStyles} />
       <TextBox
         desktopGridColumn={`3/5`}
         desktopGridRow={`3/4`}

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import propTypes from "prop-types";
 import CssVariables from "../../utils/CssVariables";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 
 const StyledNavLink = styled.div`
   width: max-content;

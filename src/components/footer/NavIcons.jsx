@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import CssVariables from "../../utils/CssVariables";
 import Icon from "../utils/Icon";
-import {Icons} from "../../utils/Icons";
+import { Icons } from "../../utils/Icons";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -21,11 +21,11 @@ const NavIcons = (props) => {
   return (
     <StyledDiv>
       {Object.keys(Icons.footer).map((key) => {
-        const IconObj = Icons.footer[key];
+        const icon = Icons.footer[key];
         return (
-          <Link to={`#${IconObj.url}`} key={IconObj.id}>
+          <Link to={`#${icon.url}`} key={icon.id}>
             <Icon
-              id={IconObj.id}
+              id={icon.id}
               color={CssVariables.ColorGreen}
               hoverColor={CssVariables.ColorWhite}
             />

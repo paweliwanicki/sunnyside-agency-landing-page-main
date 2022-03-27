@@ -1,5 +1,5 @@
 const sizes = {
-  // size in pixesl -> converted to em in mediaQueries utils
+  // size in pixels -> converted to em in mediaQueries utils
   mobileS: "320",
   mobileM: "375",
   mobileL: "450",

@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 import CssVariables from "../../utils/CssVariables";
 import NavLinks from "../navigation/NavLinks";
 import NavIcons from "./NavIcons";

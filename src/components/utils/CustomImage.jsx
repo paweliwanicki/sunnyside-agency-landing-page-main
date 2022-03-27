@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import propTypes from "prop-types";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 
 const StyledImg = styled.img`
   grid-column: ${(props) =>
@@ -18,7 +18,7 @@ const StyledImg = styled.img`
 `;
 
 const CustomImage = (props) => {
-  const ImageObj = props;
+  const ImageObj = props.image;
   return (
     <StyledImg
       src={ImageObj.src}
@@ -33,8 +33,12 @@ const CustomImage = (props) => {
 };
 
 CustomImage.propTypes = {
-  image: propTypes.object,
+  image: propTypes.object.isRequired,
   customCss: propTypes.array,
+};
+
+CustomImage.defaultProps = {
+  customCss: [],
 };
 
 export default CustomImage;

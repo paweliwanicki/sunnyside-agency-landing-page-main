@@ -4,7 +4,7 @@ import backgroundImage from "../../images/desktop/image-header.jpg";
 import Navbar from "./Navbar";
 import propTypes from "prop-types";
 import CssVariables from "../../utils/CssVariables";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 import Icon from "../utils/Icon";
 import {Icons} from '../../utils/Icons';
 
@@ -36,7 +36,7 @@ const Header = styled.h1`
   }
 
   ${mediaQueries.tabletM`
-     margin-top:145px;
+     margin-top: 145px;
      padding-left: 24px;
      padding-right: 24px;
     `};
@@ -71,6 +71,10 @@ const NavigationContainer = (props) => {
 
 NavigationContainer.propTypes = {
   children: propTypes.node,
+};
+
+NavigationContainer.defaultProps = {
+  children: null,
 };
 
 export default NavigationContainer;

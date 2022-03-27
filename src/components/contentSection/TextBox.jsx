@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CssVariables from "../../utils/CssVariables";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 import propTypes from "prop-types";
 import Link from "./Link";
 
@@ -35,9 +35,9 @@ const TextBoxDiv = styled.div`
   `};
 
   ${mediaQueries.laptopL`
-    padding-right:24px;
-    padding-left:24px;
-    align-items:center;
+    padding-right: 24px;
+    padding-left: 24px;
+    align-items: center;
   `}
 `;
 
@@ -53,7 +53,7 @@ const Header = styled.h2`
 
   ${mediaQueries.laptopL`
     font-size: 25px;
-    line-height:30px;
+    line-height: 30px;
   `};
 `;
 
@@ -70,11 +70,11 @@ const ContentDiv = styled.div`
   max-width: 445px;
 
   ${mediaQueries.laptopS`
-  font-size:0.7em;
+  font-size: 0.7em;
   `}
 
   ${mediaQueries.tabletS`
-    font-size:initial;
+    font-size: initial;
   `}
 `;
 
@@ -109,5 +109,15 @@ TextBox.propTypes = {
   text: propTypes.string,
   children: propTypes.node,
 };
+
+TextBox.defaultProps = {
+  desktopGridColumn: '',
+  desktopGridRow: '',
+  mobileGridRow: '',
+  mobileGridColumn: '',
+  headerText: '',
+  text: '',
+  children: null,
+}
 
 export default TextBox;
