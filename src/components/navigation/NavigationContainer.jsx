@@ -6,7 +6,7 @@ import propTypes from "prop-types";
 import CssVariables from "../../utils/CssVariables";
 import { mediaQueries } from "../../utils/mixins";
 import Icon from "../utils/Icon";
-import {Icons} from '../../utils/Icons';
+import { Icons } from "../../utils/Icons";
 
 const NavigationContainerDiv = styled.div`
   max-height: 800px;

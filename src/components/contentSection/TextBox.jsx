@@ -90,7 +90,7 @@ const TextBox = (props) => {
         <Header>{props.headerText}</Header>
         <Paragraph>{props.text}</Paragraph>
         <Link
-          href={"#test"}
+          href={"#"}
           text={`LEARN MORE`}
           borderColor={props.linkBorderColor}
         />
@@ -111,13 +111,13 @@ TextBox.propTypes = {
 };
 
 TextBox.defaultProps = {
-  desktopGridColumn: '',
-  desktopGridRow: '',
-  mobileGridRow: '',
-  mobileGridColumn: '',
-  headerText: '',
-  text: '',
+  desktopGridColumn: "",
+  desktopGridRow: "",
+  mobileGridRow: "",
+  mobileGridColumn: "",
+  headerText: "",
+  text: "",
   children: null,
-}
+};
 
 export default TextBox;

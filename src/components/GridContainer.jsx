@@ -20,4 +20,8 @@ GridContainer.propTypes = {
   children: propTypes.node,
 };
 
+GridContainer.defaultProps = {
+  children: null,
+};
+
 export default GridContainer;

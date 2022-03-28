@@ -83,13 +83,13 @@ TextBoxBgImage.propTypes = {
 };
 
 TextBoxBgImage.defaultProps = {
-  desktopGridColumn: '',
-  desktopGridRow: '',
-  mobileGridRow: '',
-  mobileGridColumn: '',
-  color: '',
-  headerText: '',
-  text: '',
-}
+  desktopGridColumn: "",
+  desktopGridRow: "",
+  mobileGridRow: "",
+  mobileGridColumn: "",
+  color: "",
+  headerText: "",
+  text: "",
+};
 
 export default TextBoxBgImage;

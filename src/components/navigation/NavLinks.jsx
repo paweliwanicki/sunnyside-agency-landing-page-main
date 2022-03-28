@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import NavLink from "./NavLink";
 import CssVariables from "../../utils/CssVariables";
-import propTypes from 'prop-types';
+import propTypes from "prop-types";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -30,7 +30,13 @@ const NavLinks = (props) => {
 NavLinks.propTypes = {
   customCss: propTypes.array,
   footer: propTypes.bool,
-  children: propTypes.node
-}
+  children: propTypes.node,
+};
+
+NavLinks.defaultProps = {
+  customCss: [],
+  footer: false,
+  children: null,
+};
 
 export default NavLinks;

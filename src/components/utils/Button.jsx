@@ -44,4 +44,12 @@ Button.propTypes = {
   text: propTypes.string,
 };
 
+Button.defaultProps = {
+  type: 'button',
+  onClick: null,
+  disabled: false,
+  bgColor: '',
+  text: '',
+};
+
 export default Button;

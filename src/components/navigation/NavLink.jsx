@@ -41,4 +41,9 @@ NavLink.propTypes = {
   footer: propTypes.bool,
 };
 
+NavLink.defaultProps = {
+  navdrawer: false,
+  footer: false,
+};
+
 export default NavLink;

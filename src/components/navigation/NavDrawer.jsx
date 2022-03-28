@@ -28,7 +28,7 @@ const NavDrawerDiv = styled.div`
     margin: 0 24px;
     width: calc(100% - 48px);
     right: 0;
-  `}; 
+  `};
 
   &:after {
     content: " ";
@@ -66,11 +66,11 @@ const NavDrawer = (props) => {
 };
 
 NavDrawer.propTypes = {
-  open: propTypes.bool
-}
+  open: propTypes.bool,
+};
 
 NavDrawer.defaultProps = {
-  open: false
-}
+  open: false,
+};
 
 export default NavDrawer;
