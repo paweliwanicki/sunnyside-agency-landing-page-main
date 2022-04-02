@@ -1,28 +1,33 @@
-const sizes = {
-  // size in pixesl -> converted to em in mediaQueries utils
+const SIZES = {
+  // size in pixels -> converted to em in mediaQueries utils
   mobileS: "320",
   mobileM: "375",
   mobileL: "450",
   tabletS: "720",
   tabletM: "768",
-  laptop: "1024",
-  laptopL: "1350",
+  laptopS: "1024",
+  laptopM: "1190",
+  laptopL: "1425",
   desktop: "2560",
+  customTabletMinMax: "",
 };
 
-const device = {
-  mobileS: `(max-width: ${sizes.mobileS})`,
-  mobileM: `(max-width: ${sizes.mobileM})`,
-  mobileL: `(max-width: ${sizes.mobileL})`,
-  tabletS: `(max-width: ${sizes.tabletS})`,
-  tabletM: `(max-width: ${sizes.tabletM})`,
-  laptop: `(max-width: ${sizes.laptop})`,
-  laptopL: `(max-width: ${sizes.laptopL})`,
-  desktop: `(max-width: ${sizes.desktop})`,
+const DEVICE = {
+  mobileS: `(max-width: ${SIZES.mobileS})`,
+  mobileM: `(max-width: ${SIZES.mobileM})`,
+  mobileL: `(max-width: ${SIZES.mobileL})`,
+  tabletS: `(max-width: ${SIZES.tabletS})`,
+  tabletM: `(max-width: ${SIZES.tabletM})`,
+  laptopS: `(max-width: ${SIZES.laptopS})`,
+  laptopM: `(max-width: ${SIZES.laptopM})`,
+  laptopL: `(max-width: ${SIZES.laptopL})`,
+  desktop: `(max-width: ${SIZES.desktop})`,
+  customTabletMax: `(max-width: ${SIZES.customTabletMax})`,
+  
 };
 
-const Breakpoints = {
-  sizes: { ...sizes },
-  device: { ...device },
+const BREAKPOINTS = {
+  sizes: { ...SIZES },
+  device: { ...DEVICE },
 };
-export default Breakpoints;
+export default BREAKPOINTS;

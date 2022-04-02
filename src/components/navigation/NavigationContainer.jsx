@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import backgroundImage from "../../images/desktop/image-header.jpg";
-import arrowDown from "../../images/icon-arrow-down.svg";
 import Navbar from "./Navbar";
-import CustomImage from "../utils/CustomImage";
 import propTypes from "prop-types";
 import CssVariables from "../../utils/CssVariables";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
+import Icon from "../utils/Icon";
+import { Icons } from "../../utils/Icons";
 
 const NavigationContainerDiv = styled.div`
   max-height: 800px;
@@ -21,15 +21,33 @@ const NavigationContainerDiv = styled.div`
 `;
 
 const Header = styled.h1`
-  margin-top: 1.9em;
+  margin-top: 106px;
   color: ${CssVariables.ColorWhite};
   font-size: 3.5em;
   text-align: center;
   font-family: ${CssVariables.FontFamilyFraunces};
   margin-bottom: 1.75em;
+  letter-spacing: 8.75px;
+  line-height: 69px;
 
+  svg {
+    display: block;
+    margin: 95px auto 0 auto;
+  }
+
+  ${mediaQueries.tabletM`
+     margin-top: 145px;
+     padding-left: 24px;
+     padding-right: 24px;
+    `};
+
+  ${mediaQueries.mobileL`
+   font-size: 2.5em;
+   letter-spacing: 6.25px;
+  `};
   ${mediaQueries.mobileM`
-   font-size: 2.95em;
+   font-size: 2.25em;
+   letter-spacing: 5px;
   `};
 `;
 
@@ -37,13 +55,15 @@ const NavigationContainer = (props) => {
   return (
     <NavigationContainerDiv>
       <Navbar />
-      <Header>WE ARE CREATIVES</Header>
-      <CustomImage
-        src={arrowDown}
-        alt={`arrow, navigate to site`}
-        display={`block`}
-        margin={`auto`}
-      />
+      <Header>
+        WE ARE CREATIVES
+        <Icon
+          id={Icons.arrowDown.id}
+          width={36}
+          height={114}
+          color={CssVariables.ColorWhite}
+        />
+      </Header>
       {props.children}
     </NavigationContainerDiv>
   );
@@ -51,6 +71,10 @@ const NavigationContainer = (props) => {
 
 NavigationContainer.propTypes = {
   children: propTypes.node,
+};
+
+NavigationContainer.defaultProps = {
+  children: null,
 };
 
 export default NavigationContainer;
