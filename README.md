@@ -15,6 +15,10 @@
   <p>&bull; Styled Components </p>
 </p>
 <p>
+  Link to my project website:
+  <a href="https://paweliwanicki.github.io/sunnyside-agency-landing-page-main/" rel="noreferrer"  target="_blank">https://paweliwanicki.github.io/sunnyside-agency-landing-page-main/</a>
+<p>
+<p>
   Link to frontend mentor project:
   <a href="https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef" rel="noreferrer"  target="_blank">https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef</a>
 <p>
