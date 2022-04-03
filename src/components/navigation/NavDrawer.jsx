@@ -2,53 +2,54 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import NavLink from "./NavLink";
 import Button from "../utils/Button";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 import { fadeInDown, fadeOutUp } from "react-animations";
 import CssVariables from "../../utils/CssVariables";
+import propTypes from "prop-types";
 
-// simple animation
 const fadeInDownAnimation = keyframes`${fadeInDown}`;
 const fadeOutUpAnimation = keyframes`${fadeOutUp}`;
 
 const NavDrawerDiv = styled.div`
   background-color: ${CssVariables.ColorWhite};
-  width: 20.62em;
-  height: 20.62em;
+  width: 330px;
+  height: 305px;
   position: fixed;
-  top: 6.65em;
-  right: 3em;
-  padding: 2.45em;
+  top: 106px;
+  right: 24px;
+  padding: 39px;
   box-sizing: border-box;
+  color: ${CssVariables.ColorGray};
   animation: 1s
     ${(props) => (props.open ? fadeInDownAnimation : fadeOutUpAnimation)};
+  font-size: 1.1em;
 
   ${mediaQueries.mobileL`
-    margin: 0 1.4375em;
-    width: calc(100% - 2.875em);
-    right:0;
+    margin: 0 24px;
+    width: calc(100% - 48px);
+    right: 0;
   `};
-`;
-
-const Content = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  align-items: center;
 
   &:after {
     content: " ";
     position: absolute;
-    top: -4em;
-    right: -2.4375em;
+    top: -24px;
+    right: -0;
     width: 0;
     height: 0;
     border-style: solid;
     border-width: 0 0 24px 24px;
     border-color: Transparent Transparent ${CssVariables.ColorWhite} Transparent;
   }
+`;
+
+const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const NavDrawer = (props) => {
@@ -62,6 +63,14 @@ const NavDrawer = (props) => {
       </Content>
     </NavDrawerDiv>
   );
+};
+
+NavDrawer.propTypes = {
+  open: propTypes.bool,
+};
+
+NavDrawer.defaultProps = {
+  open: false,
 };
 
 export default NavDrawer;

@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import CssVariables from "../../utils/CssVariables";
-import { respondTo, mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
+import propTypes from "prop-types";
+import Link from "./Link";
 
 const TextBoxDiv = styled.div`
   grid-column: ${(props) =>
@@ -20,77 +22,60 @@ const TextBoxDiv = styled.div`
   font-family: ${CssVariables.FontFamilyBarlow};
   font-weight: ${CssVariables.FontWeight600};
   color: ${CssVariables.ColorGray};
-  line-height: 1.7em;
-  font-size: 1.1375em;
+  line-height: 30px;
+  font-size: 1.125em;
 
   ${mediaQueries.tabletS`
-    grid-column: ${(props) => props.mobileGridColumn ? props.mobileGridColumn : ""};
+    grid-column: ${(props) =>
+      props.mobileGridColumn ? props.mobileGridColumn : ""};
     grid-row: ${(props) => (props.mobileGridRow ? props.mobileGridRow : "")};
-    padding-top: 4em;
-    padding-bottom: 4em;
-    margin-left: 1.25em;
-    margin-right: 1.25em;
-    text-align: center;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    text-align: left;
   `};
 
   ${mediaQueries.laptopL`
-    padding-right:0;
-    padding-left:0;
-    align-items:center;
+    padding-right: 24px;
+    padding-left: 24px;
+    align-items: center;
   `}
-
-  a {
-    color: ${CssVariables.ColorDark};
-    font-weight: ${CssVariables.FontWeight900};
-    font-size: 0.95em;
-    text-decoration: none;
-    font-family: ${CssVariables.FontFamilyFraunces};
-    &:hover {
-      text-decoration: none;
-    }
-  }
 `;
 
 const Header = styled.h2`
   font-weight: ${CssVariables.FontWeight900};
-  font-size: 2.5em;
-  line-height: 1.075em;
+  font-size: 40px;
+  line-height: 49px;
   font-family: ${CssVariables.FontFamilyFraunces};
   color: ${CssVariables.ColorDark};
   margin-top: 0;
-  margin-bottom: 0.7em;
-  max-width: 9.8em;
+  margin-bottom: 32px;
+  width: 100%;
 
   ${mediaQueries.laptopL`
-    font-size: 1.87em;
-    margin-left: auto;
-    margin-right: auto;
-  `}
+    font-size: 25px;
+    line-height: 30px;
+  `};
 `;
 
 const Paragraph = styled.p`
-  margin-bottom: 2.5em;
+  margin-bottom: 40px;
   margin-top: 0;
-  max-width: 24.5em;
+  width: 100%;
+  letter-spacing: -0.13px;
 `;
 
 const ContentDiv = styled.div`
   width: fit-content;
   height: fit-content;
+  max-width: 445px;
 
-  ${respondTo(
-    `(max-width: 33.75em)`,
-    `
-    margin:auto;
-  `
-  )}
+  ${mediaQueries.laptopS`
+  font-size: 0.7em;
+  `}
 
-  ${respondTo(
-    `(min-width: 45.01em) and (max-width: 61.25em)`,
-    `
-    font-size:0.7em;
-  `
-  )}
+  ${mediaQueries.tabletS`
+    font-size: initial;
+  `}
 `;
 
 const TextBox = (props) => {
@@ -104,11 +89,35 @@ const TextBox = (props) => {
       <ContentDiv>
         <Header>{props.headerText}</Header>
         <Paragraph>{props.text}</Paragraph>
-        <a href="#test">LEARN MORE</a>
+        <Link
+          href={"#"}
+          text={`LEARN MORE`}
+          borderColor={props.linkBorderColor}
+        />
         {props.children}
       </ContentDiv>
     </TextBoxDiv>
   );
+};
+
+TextBox.propTypes = {
+  desktopGridColumn: propTypes.string,
+  desktopGridRow: propTypes.string,
+  mobileGridRow: propTypes.string,
+  mobileGridColumn: propTypes.string,
+  headerText: propTypes.string,
+  text: propTypes.string,
+  children: propTypes.node,
+};
+
+TextBox.defaultProps = {
+  desktopGridColumn: "",
+  desktopGridRow: "",
+  mobileGridRow: "",
+  mobileGridColumn: "",
+  headerText: "",
+  text: "",
+  children: null,
 };
 
 export default TextBox;

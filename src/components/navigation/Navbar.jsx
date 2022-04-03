@@ -1,34 +1,37 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import CustomImage from "../utils/CustomImage";
+import styled, { css } from "styled-components";
 import Button from "../utils/Button";
-import NavLink from "./NavLink";
-import logo from "../../images/logo.svg";
-import hamburger from "../../images/icon-hamburger.svg";
 import NavDrawer from "./NavDrawer";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 import CssVariables from "../../utils/CssVariables";
+import NavLinks from "./NavLinks";
+import Icon from "../utils/Icon";
+import { Icons } from "../../utils/Icons";
 
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  margin: 2em 3em 0 2.5em;
+  margin: 34px 48px 0 40px;
   color: ${CssVariables.ColorWhite};
   justify-content: space-between;
 
-  ${mediaQueries.mobileL`
-    margin-left:  1.4375em;
-    margin-right:  1.4375em;
+  ${mediaQueries.tabletM`
+    margin: 0;
+    padding: 32px 24px;
+    background-color: ${CssVariables.ColorBlue};
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+
+    svg[data-id="logo"] {
+      width: 124px;
+      height: 24px;
+    }
   `}
 `;
 
-const NavLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-
-  ${mediaQueries.tabletS`
+const NavLinksCustomCss = css`
+  ${mediaQueries.tabletM`
     display: none;
   `}
 `;
@@ -40,7 +43,7 @@ const NavDrawerToggler = styled.button`
   border: 0;
   padding: 0;
 
-  ${mediaQueries.tabletS`
+  ${mediaQueries.tabletM`
     display: block;
   `}
 `;
@@ -61,15 +64,23 @@ const Navbar = (props) => {
 
   return (
     <StyledNav>
-      <CustomImage src={logo} alt={`sunnyside `} />
-      <NavLinks>
-        <NavLink text={`About`} link={"About"} />
-        <NavLink text={`Services`} link={"Services"} />
-        <NavLink text={`Projects`} link={"Projects"} />
+      <Icon
+        id={Icons.logo.id}
+        color={CssVariables.ColorWhite}
+        width={170}
+        height={33}
+        viewBox={`0 0 124 24`}
+      />
+      <NavLinks customCss={NavLinksCustomCss}>
         <Button text={`CONTACT`} />
       </NavLinks>
       <NavDrawerToggler onClick={navDrawerTogglerHandler}>
-        <CustomImage src={hamburger} alt={`navdrawer toggler`} />
+        <Icon
+          id={Icons.hamburger.id}
+          color={CssVariables.ColorWhite}
+          height={18}
+          width={24}
+        />
       </NavDrawerToggler>
       {navDrawerIsVisible && <NavDrawer open={navDrawerIsOpen} />}
     </StyledNav>

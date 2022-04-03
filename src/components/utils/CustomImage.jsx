@@ -1,16 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import propTypes from "prop-types";
-import { mediaQueries } from "../../utils/Mixins";
+import { mediaQueries } from "../../utils/mixins";
 
 const StyledImg = styled.img`
-  width: ${(props) => (props.width ? props.width : "initial")};
-  height: ${(props) => (props.height ? props.height : "auto")};
-  display: ${(props) => props.display};
-  margin: ${(props) => props.margin};
   grid-column: ${(props) =>
     props.desktopGridColumn ? props.desktopGridColumn : ""};
   grid-row: ${(props) => (props.desktopGridRow ? props.desktopGridRow : "")};
+
+  ${(props) => props.customCss}
 
   ${mediaQueries.tabletS`
     grid-column: ${(props) =>
@@ -20,26 +18,27 @@ const StyledImg = styled.img`
 `;
 
 const CustomImage = (props) => {
+  const ImageObj = props.image;
   return (
     <StyledImg
-      src={props.src}
-      alt={props.alt}
-      height={props.height}
-      width={props.width}
-      display={props.display}
-      margin={props.margin}
-      desktopGridColumn={props.desktopGridColumn}
-      desktopGridRow={props.desktopGridRow}
-      mobileGridRow={props.mobileGridRow}
-      mobileGridColumn={props.mobileGridColumn}
+      src={ImageObj.src}
+      alt={ImageObj.alt}
+      desktopGridColumn={ImageObj.desktopGridColumn}
+      desktopGridRow={ImageObj.desktopGridRow}
+      mobileGridRow={ImageObj.mobileGridRow}
+      mobileGridColumn={ImageObj.mobileGridColumn}
+      customCss={props.customCss}
     />
   );
 };
 
 CustomImage.propTypes = {
-  src: propTypes.string.isRequired,
-  alt: propTypes.string.isRequired,
-  className: propTypes.string,
+  image: propTypes.object.isRequired,
+  customCss: propTypes.array,
+};
+
+CustomImage.defaultProps = {
+  customCss: [],
 };
 
 export default CustomImage;

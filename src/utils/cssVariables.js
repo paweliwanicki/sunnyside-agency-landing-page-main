@@ -2,12 +2,18 @@ const CssVariables = {
   // colors
   ColorWhite: "#fff",
   ColorLightBlue: "#78cdf5",
+  colorGrayLight: "#A7AAAD",
   ColorGray: "#808397",
+  ColorGrayDark: "#5B636D",
   ColorYellow: "#FBD600",
   Transparent: "Transparent",
-  ColorDark: '#24303e',
-  ColorDarkBlue: '#24303e',
-  ColorDarkGreen: '#24554A',
+  ColorDark: "#24303e",
+  ColorLightGreen: "#90D4C6",
+  ColorGreen: "#2C7566",
+  ColorDarkGreen: "#24554A",
+  ColorLightYellow: "#FAD400",
+  ColorOrange: "#FE7766",
+  ColorBlue: "#3dbeff",
 
   // fonts
   FontFamilyBarlow: `'Barlow', sans-serif`,
